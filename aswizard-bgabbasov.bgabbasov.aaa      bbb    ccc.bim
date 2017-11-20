@@ -1,0 +1,257 @@
+{
+  "name": "aaa      bbb    ccc",
+  "description": "Imported database from sql server 'aswizarg-server.database.windows.net' and database 'AdventureWorksDBKamil3'",
+  "compatibilityLevel": 1000000,
+  "model": {
+    "name": "aaa      bbb    ccc    ",
+    "description": "A Tabular data model at the 1400 compatibility level.",
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SqlServer aswizarg-server.database.windows.net AdventureWorksDBKamil3",
+        "description": "A data source definition that uses explicit sql server credentials from connection string",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "aswizarg-server.database.windows.net",
+            "database": "AdventureWorksDBKamil3"
+          }
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "Username": "analytics_admin",
+          "EncryptConnection": true,
+          "Password": null
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "SalesLT.Address",
+        "description": "All data from SalesLT.Address",
+        "columns": [
+          {
+            "name": "AddressID",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "AddressID"
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "AddressLine1",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "AddressLine2",
+            "dataType": "string",
+            "sourceColumn": "AddressLine2",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "City",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "StateProvince",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "StateProvince",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "CountryRegion",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "CountryRegion",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "PostalCode",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "rowguid",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "rowguid",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "ModifiedDate",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "ModifiedDate",
+            "displayOrdinal": 8
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SalesLT.Address",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDBKamil3\", ",
+                "#\"SalesLT_Address\" = Source{[Schema=\"SalesLT\",Item=\"Address\"]}[Data] ",
+                "in ",
+                "#\"SalesLT_Address\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "ErrorLog",
+        "description": "All data from ErrorLog",
+        "columns": [
+          {
+            "name": "ErrorLogID",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ErrorLogID"
+          },
+          {
+            "name": "ErrorTime",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "ErrorTime",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "UserName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "UserName",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "ErrorNumber",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ErrorNumber",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "ErrorSeverity",
+            "dataType": "int64",
+            "sourceColumn": "ErrorSeverity",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "ErrorState",
+            "dataType": "int64",
+            "sourceColumn": "ErrorState",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "ErrorProcedure",
+            "dataType": "string",
+            "sourceColumn": "ErrorProcedure",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "ErrorLine",
+            "dataType": "int64",
+            "sourceColumn": "ErrorLine",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "ErrorMessage",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "ErrorMessage",
+            "displayOrdinal": 8
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ErrorLog",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDBKamil3\", ",
+                "#\"dbo_ErrorLog\" = Source{[Schema=\"dbo\",Item=\"ErrorLog\"]}[Data] ",
+                "in ",
+                "#\"dbo_ErrorLog\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "TEST43018",
+        "columns": [
+          {
+            "name": "ErrorLogIDSum",
+            "dataType": "int64",
+            "sourceColumn": "ErrorLogIDSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "ErrorLog",
+                "column": "ErrorLogID"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ErrorTimeCount",
+            "dataType": "dateTime",
+            "sourceColumn": "ErrorTimeCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "ErrorLog",
+                "column": "ErrorTime"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "UserNameCount",
+            "dataType": "string",
+            "sourceColumn": "UserNameCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "ErrorLog",
+                "column": "UserName"
+              },
+              "summarization": "count"
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "TEST43018Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDBKamil3\",",
+                "#\"dbo_ErrorLog\" = Source{[Schema=\"dbo\",Item=\"ErrorLog\"]}[Data],",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"dbo_ErrorLog\", {\"ErrorLogID\",\"ErrorTime\",\"UserName\"})",
+                "in ",
+                "#\"Selected Columns\""
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ASW-DEFAULT-DIAGRAM",
+        "value": "{\"Version\":1,\"Name\":\"default\",\"Tables\":[{\"TableName\":\"ErrorLog\",\"X\":310,\"Y\":310,\"Z\":2,\"Width\":225,\"Height\":275},{\"TableName\":\"SalesLT.Address\",\"X\":10,\"Y\":10,\"Z\":1,\"Width\":225,\"Height\":275},{\"TableName\":\"TEST43018\",\"X\":200,\"Y\":200,\"Z\":2,\"Width\":225,\"Height\":275}]}"
+      }
+    ]
+  }
+}
