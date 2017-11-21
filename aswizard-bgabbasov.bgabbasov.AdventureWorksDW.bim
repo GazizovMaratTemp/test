@@ -1,0 +1,5235 @@
+{
+  "name": "AdventureWorksDW",
+  "description": "Imported database from sql server 'aswizarg-server.database.windows.net' and database 'AdventureWorksDW'",
+  "compatibilityLevel": 1000000,
+  "model": {
+    "name": "AdventureWorksDW",
+    "description": "A Tabular data model at the 1400 compatibility level.",
+    "defaultMode": "directQuery",
+    "culture": "en-US",
+    "dataSources": [
+      {
+        "type": "structured",
+        "name": "SqlServer aswizarg-server.database.windows.net AdventureWorksDW",
+        "description": "A data source definition that uses explicit sql server credentials from connection string",
+        "connectionDetails": {
+          "protocol": "tds",
+          "address": {
+            "server": "aswizarg-server.database.windows.net",
+            "database": "AdventureWorksDW"
+          }
+        },
+        "credential": {
+          "AuthenticationKind": "UsernamePassword",
+          "Username": "analytics_admin3",
+          "EncryptConnection": true
+        }
+      }
+    ],
+    "tables": [
+      {
+        "name": "AdventureWorksDWBuildVersion",
+        "description": "All data from AdventureWorksDWBuildVersion",
+        "columns": [
+          {
+            "name": "DBVersion",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "DBVersion"
+          },
+          {
+            "name": "VersionDate",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "VersionDate",
+            "displayOrdinal": 1
+          }
+        ],
+        "partitions": [
+          {
+            "name": "AdventureWorksDWBuildVersion",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_AdventureWorksDWBuildVersion" = Source{[Schema="dbo",Item="AdventureWorksDWBuildVersion"]}[Data] ",
+                "in ",
+                "#"dbo_AdventureWorksDWBuildVersion""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DatabaseLog",
+        "description": "All data from DatabaseLog",
+        "columns": [
+          {
+            "name": "DatabaseLogID",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DatabaseLogID"
+          },
+          {
+            "name": "PostTime",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "PostTime",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "DatabaseUser",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "DatabaseUser",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "Event",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "Event",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "Schema",
+            "dataType": "string",
+            "sourceColumn": "Schema",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "Object",
+            "dataType": "string",
+            "sourceColumn": "Object",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "TSQL",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "TSQL",
+            "displayOrdinal": 6
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DatabaseLog",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DatabaseLog" = Source{[Schema="dbo",Item="DatabaseLog"]}[Data] ",
+                "in ",
+                "#"dbo_DatabaseLog""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimAccount",
+        "description": "All data from DimAccount",
+        "columns": [
+          {
+            "name": "AccountKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "AccountKey"
+          },
+          {
+            "name": "ParentAccountKey",
+            "dataType": "int64",
+            "sourceColumn": "ParentAccountKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "AccountCodeAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "AccountCodeAlternateKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "ParentAccountCodeAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "ParentAccountCodeAlternateKey",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "AccountDescription",
+            "dataType": "string",
+            "sourceColumn": "AccountDescription",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "AccountType",
+            "dataType": "string",
+            "sourceColumn": "AccountType",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "Operator",
+            "dataType": "string",
+            "sourceColumn": "Operator",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "CustomMembers",
+            "dataType": "string",
+            "sourceColumn": "CustomMembers",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "ValueType",
+            "dataType": "string",
+            "sourceColumn": "ValueType",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "CustomMemberOptions",
+            "dataType": "string",
+            "sourceColumn": "CustomMemberOptions",
+            "displayOrdinal": 9
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimAccount",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimAccount" = Source{[Schema="dbo",Item="DimAccount"]}[Data] ",
+                "in ",
+                "#"dbo_DimAccount""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimCurrency",
+        "description": "All data from DimCurrency",
+        "columns": [
+          {
+            "name": "CurrencyKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CurrencyKey"
+          },
+          {
+            "name": "CurrencyAlternateKey",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "CurrencyAlternateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "CurrencyName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "CurrencyName",
+            "displayOrdinal": 2
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCurrency",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimCurrency" = Source{[Schema="dbo",Item="DimCurrency"]}[Data] ",
+                "in ",
+                "#"dbo_DimCurrency""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimCustomer",
+        "description": "All data from DimCustomer",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CustomerKey"
+          },
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "CustomerAlternateKey",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "CustomerAlternateKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "MiddleName",
+            "dataType": "string",
+            "sourceColumn": "MiddleName",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "NameStyle",
+            "dataType": "boolean",
+            "sourceColumn": "NameStyle",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "BirthDate",
+            "dataType": "dateTime",
+            "sourceColumn": "BirthDate",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "MaritalStatus",
+            "dataType": "string",
+            "sourceColumn": "MaritalStatus",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "Suffix",
+            "dataType": "string",
+            "sourceColumn": "Suffix",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "EmailAddress",
+            "dataType": "string",
+            "sourceColumn": "EmailAddress",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "YearlyIncome",
+            "dataType": "decimal",
+            "sourceColumn": "YearlyIncome",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "TotalChildren",
+            "dataType": "int64",
+            "sourceColumn": "TotalChildren",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "NumberChildrenAtHome",
+            "dataType": "int64",
+            "sourceColumn": "NumberChildrenAtHome",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "EnglishEducation",
+            "dataType": "string",
+            "sourceColumn": "EnglishEducation",
+            "displayOrdinal": 16
+          },
+          {
+            "name": "SpanishEducation",
+            "dataType": "string",
+            "sourceColumn": "SpanishEducation",
+            "displayOrdinal": 17
+          },
+          {
+            "name": "FrenchEducation",
+            "dataType": "string",
+            "sourceColumn": "FrenchEducation",
+            "displayOrdinal": 18
+          },
+          {
+            "name": "EnglishOccupation",
+            "dataType": "string",
+            "sourceColumn": "EnglishOccupation",
+            "displayOrdinal": 19
+          },
+          {
+            "name": "SpanishOccupation",
+            "dataType": "string",
+            "sourceColumn": "SpanishOccupation",
+            "displayOrdinal": 20
+          },
+          {
+            "name": "FrenchOccupation",
+            "dataType": "string",
+            "sourceColumn": "FrenchOccupation",
+            "displayOrdinal": 21
+          },
+          {
+            "name": "HouseOwnerFlag",
+            "dataType": "string",
+            "sourceColumn": "HouseOwnerFlag",
+            "displayOrdinal": 22
+          },
+          {
+            "name": "NumberCarsOwned",
+            "dataType": "int64",
+            "sourceColumn": "NumberCarsOwned",
+            "displayOrdinal": 23
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "sourceColumn": "AddressLine1",
+            "displayOrdinal": 24
+          },
+          {
+            "name": "AddressLine2",
+            "dataType": "string",
+            "sourceColumn": "AddressLine2",
+            "displayOrdinal": 25
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "displayOrdinal": 26
+          },
+          {
+            "name": "DateFirstPurchase",
+            "dataType": "dateTime",
+            "sourceColumn": "DateFirstPurchase",
+            "displayOrdinal": 27
+          },
+          {
+            "name": "CommuteDistance",
+            "dataType": "string",
+            "sourceColumn": "CommuteDistance",
+            "displayOrdinal": 28
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimCustomer",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimCustomer" = Source{[Schema="dbo",Item="DimCustomer"]}[Data] ",
+                "in ",
+                "#"dbo_DimCustomer""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimDate",
+        "description": "All data from DimDate",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DateKey"
+          },
+          {
+            "name": "FullDateAlternateKey",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "FullDateAlternateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "DayNumberOfWeek",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DayNumberOfWeek",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "EnglishDayNameOfWeek",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "EnglishDayNameOfWeek",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "SpanishDayNameOfWeek",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SpanishDayNameOfWeek",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "FrenchDayNameOfWeek",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "FrenchDayNameOfWeek",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "DayNumberOfMonth",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DayNumberOfMonth",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "DayNumberOfYear",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DayNumberOfYear",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "WeekNumberOfYear",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "WeekNumberOfYear",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "EnglishMonthName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "EnglishMonthName",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "SpanishMonthName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SpanishMonthName",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "FrenchMonthName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "FrenchMonthName",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "MonthNumberOfYear",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "MonthNumberOfYear",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "CalendarQuarter",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CalendarQuarter",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CalendarYear",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "CalendarSemester",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CalendarSemester",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "FiscalQuarter",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "FiscalQuarter",
+            "displayOrdinal": 16
+          },
+          {
+            "name": "FiscalYear",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "FiscalYear",
+            "displayOrdinal": 17
+          },
+          {
+            "name": "FiscalSemester",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "FiscalSemester",
+            "displayOrdinal": 18
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDate",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimDate" = Source{[Schema="dbo",Item="DimDate"]}[Data] ",
+                "in ",
+                "#"dbo_DimDate""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimDepartmentGroup",
+        "description": "All data from DimDepartmentGroup",
+        "columns": [
+          {
+            "name": "DepartmentGroupKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DepartmentGroupKey"
+          },
+          {
+            "name": "ParentDepartmentGroupKey",
+            "dataType": "int64",
+            "sourceColumn": "ParentDepartmentGroupKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "DepartmentGroupName",
+            "dataType": "string",
+            "sourceColumn": "DepartmentGroupName",
+            "displayOrdinal": 2
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimDepartmentGroup",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimDepartmentGroup" = Source{[Schema="dbo",Item="DimDepartmentGroup"]}[Data] ",
+                "in ",
+                "#"dbo_DimDepartmentGroup""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimEmployee",
+        "description": "All data from DimEmployee",
+        "columns": [
+          {
+            "name": "EmployeeKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "EmployeeKey"
+          },
+          {
+            "name": "ParentEmployeeKey",
+            "dataType": "int64",
+            "sourceColumn": "ParentEmployeeKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "EmployeeNationalIDAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "EmployeeNationalIDAlternateKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "ParentEmployeeNationalIDAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "ParentEmployeeNationalIDAlternateKey",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "SalesTerritoryKey",
+            "dataType": "int64",
+            "sourceColumn": "SalesTerritoryKey",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "FirstName",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "LastName",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "MiddleName",
+            "dataType": "string",
+            "sourceColumn": "MiddleName",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "NameStyle",
+            "dataType": "boolean",
+            "isNullable": false,
+            "sourceColumn": "NameStyle",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "HireDate",
+            "dataType": "dateTime",
+            "sourceColumn": "HireDate",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "BirthDate",
+            "dataType": "dateTime",
+            "sourceColumn": "BirthDate",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "LoginID",
+            "dataType": "string",
+            "sourceColumn": "LoginID",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "EmailAddress",
+            "dataType": "string",
+            "sourceColumn": "EmailAddress",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "MaritalStatus",
+            "dataType": "string",
+            "sourceColumn": "MaritalStatus",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "EmergencyContactName",
+            "dataType": "string",
+            "sourceColumn": "EmergencyContactName",
+            "displayOrdinal": 16
+          },
+          {
+            "name": "EmergencyContactPhone",
+            "dataType": "string",
+            "sourceColumn": "EmergencyContactPhone",
+            "displayOrdinal": 17
+          },
+          {
+            "name": "SalariedFlag",
+            "dataType": "boolean",
+            "sourceColumn": "SalariedFlag",
+            "displayOrdinal": 18
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "displayOrdinal": 19
+          },
+          {
+            "name": "PayFrequency",
+            "dataType": "int64",
+            "sourceColumn": "PayFrequency",
+            "displayOrdinal": 20
+          },
+          {
+            "name": "BaseRate",
+            "dataType": "decimal",
+            "sourceColumn": "BaseRate",
+            "displayOrdinal": 21
+          },
+          {
+            "name": "VacationHours",
+            "dataType": "int64",
+            "sourceColumn": "VacationHours",
+            "displayOrdinal": 22
+          },
+          {
+            "name": "SickLeaveHours",
+            "dataType": "int64",
+            "sourceColumn": "SickLeaveHours",
+            "displayOrdinal": 23
+          },
+          {
+            "name": "CurrentFlag",
+            "dataType": "boolean",
+            "isNullable": false,
+            "sourceColumn": "CurrentFlag",
+            "displayOrdinal": 24
+          },
+          {
+            "name": "SalesPersonFlag",
+            "dataType": "boolean",
+            "isNullable": false,
+            "sourceColumn": "SalesPersonFlag",
+            "displayOrdinal": 25
+          },
+          {
+            "name": "DepartmentName",
+            "dataType": "string",
+            "sourceColumn": "DepartmentName",
+            "displayOrdinal": 26
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate",
+            "displayOrdinal": 27
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "displayOrdinal": 28
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "displayOrdinal": 29
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimEmployee",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimEmployee" = Source{[Schema="dbo",Item="DimEmployee"]}[Data] ",
+                "in ",
+                "#"dbo_DimEmployee""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimGeography",
+        "description": "All data from DimGeography",
+        "columns": [
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "GeographyKey"
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "StateProvinceCode",
+            "dataType": "string",
+            "sourceColumn": "StateProvinceCode",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "StateProvinceName",
+            "dataType": "string",
+            "sourceColumn": "StateProvinceName",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "CountryRegionCode",
+            "dataType": "string",
+            "sourceColumn": "CountryRegionCode",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "EnglishCountryRegionName",
+            "dataType": "string",
+            "sourceColumn": "EnglishCountryRegionName",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "SpanishCountryRegionName",
+            "dataType": "string",
+            "sourceColumn": "SpanishCountryRegionName",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "FrenchCountryRegionName",
+            "dataType": "string",
+            "sourceColumn": "FrenchCountryRegionName",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "SalesTerritoryKey",
+            "dataType": "int64",
+            "sourceColumn": "SalesTerritoryKey",
+            "displayOrdinal": 9
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimGeography",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimGeography" = Source{[Schema="dbo",Item="DimGeography"]}[Data] ",
+                "in ",
+                "#"dbo_DimGeography""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimOrganization",
+        "description": "All data from DimOrganization",
+        "columns": [
+          {
+            "name": "OrganizationKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "OrganizationKey"
+          },
+          {
+            "name": "ParentOrganizationKey",
+            "dataType": "int64",
+            "sourceColumn": "ParentOrganizationKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "PercentageOfOwnership",
+            "dataType": "string",
+            "sourceColumn": "PercentageOfOwnership",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "OrganizationName",
+            "dataType": "string",
+            "sourceColumn": "OrganizationName",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "CurrencyKey",
+            "dataType": "int64",
+            "sourceColumn": "CurrencyKey",
+            "displayOrdinal": 4
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimOrganization",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimOrganization" = Source{[Schema="dbo",Item="DimOrganization"]}[Data] ",
+                "in ",
+                "#"dbo_DimOrganization""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimProduct",
+        "description": "All data from DimProduct",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductKey"
+          },
+          {
+            "name": "ProductAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "ProductAlternateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "WeightUnitMeasureCode",
+            "dataType": "string",
+            "sourceColumn": "WeightUnitMeasureCode",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "SizeUnitMeasureCode",
+            "dataType": "string",
+            "sourceColumn": "SizeUnitMeasureCode",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "EnglishProductName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "EnglishProductName",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "SpanishProductName",
+            "dataType": "string",
+            "sourceColumn": "SpanishProductName",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "FrenchProductName",
+            "dataType": "string",
+            "sourceColumn": "FrenchProductName",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "StandardCost",
+            "dataType": "decimal",
+            "sourceColumn": "StandardCost",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "FinishedGoodsFlag",
+            "dataType": "boolean",
+            "isNullable": false,
+            "sourceColumn": "FinishedGoodsFlag",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "Color",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "Color",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "SafetyStockLevel",
+            "dataType": "int64",
+            "sourceColumn": "SafetyStockLevel",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "ReorderPoint",
+            "dataType": "int64",
+            "sourceColumn": "ReorderPoint",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "ListPrice",
+            "dataType": "decimal",
+            "sourceColumn": "ListPrice",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "Size",
+            "dataType": "string",
+            "sourceColumn": "Size",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "SizeRange",
+            "dataType": "string",
+            "sourceColumn": "SizeRange",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "Weight",
+            "dataType": "double",
+            "sourceColumn": "Weight",
+            "displayOrdinal": 16
+          },
+          {
+            "name": "DaysToManufacture",
+            "dataType": "int64",
+            "sourceColumn": "DaysToManufacture",
+            "displayOrdinal": 17
+          },
+          {
+            "name": "ProductLine",
+            "dataType": "string",
+            "sourceColumn": "ProductLine",
+            "displayOrdinal": 18
+          },
+          {
+            "name": "DealerPrice",
+            "dataType": "decimal",
+            "sourceColumn": "DealerPrice",
+            "displayOrdinal": 19
+          },
+          {
+            "name": "Class",
+            "dataType": "string",
+            "sourceColumn": "Class",
+            "displayOrdinal": 20
+          },
+          {
+            "name": "Style",
+            "dataType": "string",
+            "sourceColumn": "Style",
+            "displayOrdinal": 21
+          },
+          {
+            "name": "ModelName",
+            "dataType": "string",
+            "sourceColumn": "ModelName",
+            "displayOrdinal": 22
+          },
+          {
+            "name": "EnglishDescription",
+            "dataType": "string",
+            "sourceColumn": "EnglishDescription",
+            "displayOrdinal": 23
+          },
+          {
+            "name": "FrenchDescription",
+            "dataType": "string",
+            "sourceColumn": "FrenchDescription",
+            "displayOrdinal": 24
+          },
+          {
+            "name": "ChineseDescription",
+            "dataType": "string",
+            "sourceColumn": "ChineseDescription",
+            "displayOrdinal": 25
+          },
+          {
+            "name": "ArabicDescription",
+            "dataType": "string",
+            "sourceColumn": "ArabicDescription",
+            "displayOrdinal": 26
+          },
+          {
+            "name": "HebrewDescription",
+            "dataType": "string",
+            "sourceColumn": "HebrewDescription",
+            "displayOrdinal": 27
+          },
+          {
+            "name": "ThaiDescription",
+            "dataType": "string",
+            "sourceColumn": "ThaiDescription",
+            "displayOrdinal": 28
+          },
+          {
+            "name": "GermanDescription",
+            "dataType": "string",
+            "sourceColumn": "GermanDescription",
+            "displayOrdinal": 29
+          },
+          {
+            "name": "JapaneseDescription",
+            "dataType": "string",
+            "sourceColumn": "JapaneseDescription",
+            "displayOrdinal": 30
+          },
+          {
+            "name": "TurkishDescription",
+            "dataType": "string",
+            "sourceColumn": "TurkishDescription",
+            "displayOrdinal": 31
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "sourceColumn": "StartDate",
+            "displayOrdinal": 32
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "displayOrdinal": 33
+          },
+          {
+            "name": "Status",
+            "dataType": "string",
+            "sourceColumn": "Status",
+            "displayOrdinal": 34
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimProduct",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data] ",
+                "in ",
+                "#"dbo_DimProduct""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimProductCategory",
+        "description": "All data from DimProductCategory",
+        "columns": [
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductCategoryKey"
+          },
+          {
+            "name": "ProductCategoryAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryAlternateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "EnglishProductCategoryName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "EnglishProductCategoryName",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "SpanishProductCategoryName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SpanishProductCategoryName",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "FrenchProductCategoryName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "FrenchProductCategoryName",
+            "displayOrdinal": 4
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimProductCategory",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimProductCategory" = Source{[Schema="dbo",Item="DimProductCategory"]}[Data] ",
+                "in ",
+                "#"dbo_DimProductCategory""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimProductSubcategory",
+        "description": "All data from DimProductSubcategory",
+        "columns": [
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductSubcategoryKey"
+          },
+          {
+            "name": "ProductSubcategoryAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryAlternateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "EnglishProductSubcategoryName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "EnglishProductSubcategoryName",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "SpanishProductSubcategoryName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SpanishProductSubcategoryName",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "FrenchProductSubcategoryName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "FrenchProductSubcategoryName",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey",
+            "displayOrdinal": 5
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimProductSubcategory",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data] ",
+                "in ",
+                "#"dbo_DimProductSubcategory""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimPromotion",
+        "description": "All data from DimPromotion",
+        "columns": [
+          {
+            "name": "PromotionKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "PromotionKey"
+          },
+          {
+            "name": "PromotionAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "PromotionAlternateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "EnglishPromotionName",
+            "dataType": "string",
+            "sourceColumn": "EnglishPromotionName",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "SpanishPromotionName",
+            "dataType": "string",
+            "sourceColumn": "SpanishPromotionName",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "FrenchPromotionName",
+            "dataType": "string",
+            "sourceColumn": "FrenchPromotionName",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "DiscountPct",
+            "dataType": "double",
+            "sourceColumn": "DiscountPct",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "EnglishPromotionType",
+            "dataType": "string",
+            "sourceColumn": "EnglishPromotionType",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "SpanishPromotionType",
+            "dataType": "string",
+            "sourceColumn": "SpanishPromotionType",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "FrenchPromotionType",
+            "dataType": "string",
+            "sourceColumn": "FrenchPromotionType",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "EnglishPromotionCategory",
+            "dataType": "string",
+            "sourceColumn": "EnglishPromotionCategory",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "SpanishPromotionCategory",
+            "dataType": "string",
+            "sourceColumn": "SpanishPromotionCategory",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "FrenchPromotionCategory",
+            "dataType": "string",
+            "sourceColumn": "FrenchPromotionCategory",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "StartDate",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "StartDate",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "EndDate",
+            "dataType": "dateTime",
+            "sourceColumn": "EndDate",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "MinQty",
+            "dataType": "int64",
+            "sourceColumn": "MinQty",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "MaxQty",
+            "dataType": "int64",
+            "sourceColumn": "MaxQty",
+            "displayOrdinal": 15
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimPromotion",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimPromotion" = Source{[Schema="dbo",Item="DimPromotion"]}[Data] ",
+                "in ",
+                "#"dbo_DimPromotion""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimReseller",
+        "description": "All data from DimReseller",
+        "columns": [
+          {
+            "name": "ResellerKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ResellerKey"
+          },
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "ResellerAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "ResellerAlternateKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "BusinessType",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "BusinessType",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "ResellerName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "ResellerName",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "NumberEmployees",
+            "dataType": "int64",
+            "sourceColumn": "NumberEmployees",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "OrderFrequency",
+            "dataType": "string",
+            "sourceColumn": "OrderFrequency",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "OrderMonth",
+            "dataType": "int64",
+            "sourceColumn": "OrderMonth",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "FirstOrderYear",
+            "dataType": "int64",
+            "sourceColumn": "FirstOrderYear",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "LastOrderYear",
+            "dataType": "int64",
+            "sourceColumn": "LastOrderYear",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "ProductLine",
+            "dataType": "string",
+            "sourceColumn": "ProductLine",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "sourceColumn": "AddressLine1",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "AddressLine2",
+            "dataType": "string",
+            "sourceColumn": "AddressLine2",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "AnnualSales",
+            "dataType": "decimal",
+            "sourceColumn": "AnnualSales",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "BankName",
+            "dataType": "string",
+            "sourceColumn": "BankName",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "MinPaymentType",
+            "dataType": "int64",
+            "sourceColumn": "MinPaymentType",
+            "displayOrdinal": 16
+          },
+          {
+            "name": "MinPaymentAmount",
+            "dataType": "decimal",
+            "sourceColumn": "MinPaymentAmount",
+            "displayOrdinal": 17
+          },
+          {
+            "name": "AnnualRevenue",
+            "dataType": "decimal",
+            "sourceColumn": "AnnualRevenue",
+            "displayOrdinal": 18
+          },
+          {
+            "name": "YearOpened",
+            "dataType": "int64",
+            "sourceColumn": "YearOpened",
+            "displayOrdinal": 19
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimReseller",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimReseller" = Source{[Schema="dbo",Item="DimReseller"]}[Data] ",
+                "in ",
+                "#"dbo_DimReseller""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimSalesReason",
+        "description": "All data from DimSalesReason",
+        "columns": [
+          {
+            "name": "SalesReasonKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesReasonKey"
+          },
+          {
+            "name": "SalesReasonAlternateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesReasonAlternateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "SalesReasonName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SalesReasonName",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "SalesReasonReasonType",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SalesReasonReasonType",
+            "displayOrdinal": 3
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimSalesReason",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimSalesReason" = Source{[Schema="dbo",Item="DimSalesReason"]}[Data] ",
+                "in ",
+                "#"dbo_DimSalesReason""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimSalesTerritory",
+        "description": "All data from DimSalesTerritory",
+        "columns": [
+          {
+            "name": "SalesTerritoryKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesTerritoryKey"
+          },
+          {
+            "name": "SalesTerritoryAlternateKey",
+            "dataType": "int64",
+            "sourceColumn": "SalesTerritoryAlternateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "SalesTerritoryRegion",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SalesTerritoryRegion",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "SalesTerritoryCountry",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SalesTerritoryCountry",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "SalesTerritoryGroup",
+            "dataType": "string",
+            "sourceColumn": "SalesTerritoryGroup",
+            "displayOrdinal": 4
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimSalesTerritory",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimSalesTerritory" = Source{[Schema="dbo",Item="DimSalesTerritory"]}[Data] ",
+                "in ",
+                "#"dbo_DimSalesTerritory""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DimScenario",
+        "description": "All data from DimScenario",
+        "columns": [
+          {
+            "name": "ScenarioKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ScenarioKey"
+          },
+          {
+            "name": "ScenarioName",
+            "dataType": "string",
+            "sourceColumn": "ScenarioName",
+            "displayOrdinal": 1
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DimScenario",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_DimScenario" = Source{[Schema="dbo",Item="DimScenario"]}[Data] ",
+                "in ",
+                "#"dbo_DimScenario""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactCallCenter",
+        "description": "All data from FactCallCenter",
+        "columns": [
+          {
+            "name": "FactCallCenterID",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "FactCallCenterID"
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "WageType",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "WageType",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "Shift",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "Shift",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "LevelOneOperators",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "LevelOneOperators",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "LevelTwoOperators",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "LevelTwoOperators",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "TotalOperators",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "TotalOperators",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "Calls",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "Calls",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "AutomaticResponses",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "AutomaticResponses",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "Orders",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "Orders",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "IssuesRaised",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "IssuesRaised",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "AverageTimePerIssue",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "AverageTimePerIssue",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "ServiceGrade",
+            "dataType": "double",
+            "isNullable": false,
+            "sourceColumn": "ServiceGrade",
+            "displayOrdinal": 12
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactCallCenter",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_FactCallCenter" = Source{[Schema="dbo",Item="FactCallCenter"]}[Data] ",
+                "in ",
+                "#"dbo_FactCallCenter""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactCurrencyRate",
+        "description": "All data from FactCurrencyRate",
+        "columns": [
+          {
+            "name": "CurrencyKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CurrencyKey"
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "AverageRate",
+            "dataType": "double",
+            "isNullable": false,
+            "sourceColumn": "AverageRate",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "EndOfDayRate",
+            "dataType": "double",
+            "isNullable": false,
+            "sourceColumn": "EndOfDayRate",
+            "displayOrdinal": 3
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactCurrencyRate",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_FactCurrencyRate" = Source{[Schema="dbo",Item="FactCurrencyRate"]}[Data] ",
+                "in ",
+                "#"dbo_FactCurrencyRate""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactFinance",
+        "description": "All data from FactFinance",
+        "columns": [
+          {
+            "name": "FinanceKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "FinanceKey"
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "OrganizationKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "OrganizationKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "DepartmentGroupKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DepartmentGroupKey",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "ScenarioKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ScenarioKey",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "AccountKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "AccountKey",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "Amount",
+            "dataType": "double",
+            "isNullable": false,
+            "sourceColumn": "Amount",
+            "displayOrdinal": 6
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactFinance",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_FactFinance" = Source{[Schema="dbo",Item="FactFinance"]}[Data] ",
+                "in ",
+                "#"dbo_FactFinance""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactInternetSales",
+        "description": "All data from FactInternetSales",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductKey"
+          },
+          {
+            "name": "OrderDateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "OrderDateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "DueDateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DueDateKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "ShipDateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ShipDateKey",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CustomerKey",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "PromotionKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "PromotionKey",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "CurrencyKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CurrencyKey",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "SalesTerritoryKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesTerritoryKey",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "SalesOrderNumber",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SalesOrderNumber",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "SalesOrderLineNumber",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesOrderLineNumber",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "RevisionNumber",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "RevisionNumber",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "OrderQuantity",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "OrderQuantity",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "UnitPrice",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "ExtendedAmount",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "ExtendedAmount",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "UnitPriceDiscountPct",
+            "dataType": "double",
+            "isNullable": false,
+            "sourceColumn": "UnitPriceDiscountPct",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "DiscountAmount",
+            "dataType": "double",
+            "isNullable": false,
+            "sourceColumn": "DiscountAmount",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "ProductStandardCost",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "ProductStandardCost",
+            "displayOrdinal": 16
+          },
+          {
+            "name": "TotalProductCost",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "TotalProductCost",
+            "displayOrdinal": 17
+          },
+          {
+            "name": "SalesAmount",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "SalesAmount",
+            "displayOrdinal": 18
+          },
+          {
+            "name": "TaxAmt",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "TaxAmt",
+            "displayOrdinal": 19
+          },
+          {
+            "name": "Freight",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "Freight",
+            "displayOrdinal": 20
+          },
+          {
+            "name": "CarrierTrackingNumber",
+            "dataType": "string",
+            "sourceColumn": "CarrierTrackingNumber",
+            "displayOrdinal": 21
+          },
+          {
+            "name": "CustomerPONumber",
+            "dataType": "string",
+            "sourceColumn": "CustomerPONumber",
+            "displayOrdinal": 22
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactInternetSales",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data] ",
+                "in ",
+                "#"dbo_FactInternetSales""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactInternetSalesReason",
+        "description": "All data from FactInternetSalesReason",
+        "columns": [
+          {
+            "name": "SalesOrderNumber",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SalesOrderNumber"
+          },
+          {
+            "name": "SalesOrderLineNumber",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesOrderLineNumber",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "SalesReasonKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesReasonKey",
+            "displayOrdinal": 2
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactInternetSalesReason",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_FactInternetSalesReason" = Source{[Schema="dbo",Item="FactInternetSalesReason"]}[Data] ",
+                "in ",
+                "#"dbo_FactInternetSalesReason""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactResellerSales",
+        "description": "All data from FactResellerSales",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductKey"
+          },
+          {
+            "name": "OrderDateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "OrderDateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "DueDateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DueDateKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "ShipDateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ShipDateKey",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "ResellerKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ResellerKey",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "EmployeeKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "EmployeeKey",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "PromotionKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "PromotionKey",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "CurrencyKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CurrencyKey",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "SalesTerritoryKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesTerritoryKey",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "SalesOrderNumber",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "SalesOrderNumber",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "SalesOrderLineNumber",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesOrderLineNumber",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "RevisionNumber",
+            "dataType": "int64",
+            "sourceColumn": "RevisionNumber",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "OrderQuantity",
+            "dataType": "int64",
+            "sourceColumn": "OrderQuantity",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "UnitPrice",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPrice",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "ExtendedAmount",
+            "dataType": "decimal",
+            "sourceColumn": "ExtendedAmount",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "UnitPriceDiscountPct",
+            "dataType": "double",
+            "sourceColumn": "UnitPriceDiscountPct",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "DiscountAmount",
+            "dataType": "double",
+            "sourceColumn": "DiscountAmount",
+            "displayOrdinal": 16
+          },
+          {
+            "name": "ProductStandardCost",
+            "dataType": "decimal",
+            "sourceColumn": "ProductStandardCost",
+            "displayOrdinal": 17
+          },
+          {
+            "name": "TotalProductCost",
+            "dataType": "decimal",
+            "sourceColumn": "TotalProductCost",
+            "displayOrdinal": 18
+          },
+          {
+            "name": "SalesAmount",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmount",
+            "displayOrdinal": 19
+          },
+          {
+            "name": "TaxAmt",
+            "dataType": "decimal",
+            "sourceColumn": "TaxAmt",
+            "displayOrdinal": 20
+          },
+          {
+            "name": "Freight",
+            "dataType": "decimal",
+            "sourceColumn": "Freight",
+            "displayOrdinal": 21
+          },
+          {
+            "name": "CarrierTrackingNumber",
+            "dataType": "string",
+            "sourceColumn": "CarrierTrackingNumber",
+            "displayOrdinal": 22
+          },
+          {
+            "name": "CustomerPONumber",
+            "dataType": "string",
+            "sourceColumn": "CustomerPONumber",
+            "displayOrdinal": 23
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactResellerSales",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_FactResellerSales" = Source{[Schema="dbo",Item="FactResellerSales"]}[Data] ",
+                "in ",
+                "#"dbo_FactResellerSales""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactSalesQuota",
+        "description": "All data from FactSalesQuota",
+        "columns": [
+          {
+            "name": "SalesQuotaKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SalesQuotaKey"
+          },
+          {
+            "name": "EmployeeKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "EmployeeKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DateKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CalendarYear",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "CalendarQuarter",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CalendarQuarter",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "SalesAmountQuota",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "SalesAmountQuota",
+            "displayOrdinal": 5
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactSalesQuota",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_FactSalesQuota" = Source{[Schema="dbo",Item="FactSalesQuota"]}[Data] ",
+                "in ",
+                "#"dbo_FactSalesQuota""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "FactSurveyResponse",
+        "description": "All data from FactSurveyResponse",
+        "columns": [
+          {
+            "name": "SurveyResponseKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "SurveyResponseKey"
+          },
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CustomerKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductCategoryKey",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "EnglishProductCategoryName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "EnglishProductCategoryName",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProductSubcategoryKey",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "EnglishProductSubcategoryName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "EnglishProductSubcategoryName",
+            "displayOrdinal": 6
+          }
+        ],
+        "partitions": [
+          {
+            "name": "FactSurveyResponse",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_FactSurveyResponse" = Source{[Schema="dbo",Item="FactSurveyResponse"]}[Data] ",
+                "in ",
+                "#"dbo_FactSurveyResponse""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "ProspectiveBuyer",
+        "description": "All data from ProspectiveBuyer",
+        "columns": [
+          {
+            "name": "ProspectiveBuyerKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "ProspectiveBuyerKey"
+          },
+          {
+            "name": "ProspectAlternateKey",
+            "dataType": "string",
+            "sourceColumn": "ProspectAlternateKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "MiddleName",
+            "dataType": "string",
+            "sourceColumn": "MiddleName",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "BirthDate",
+            "dataType": "dateTime",
+            "sourceColumn": "BirthDate",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "MaritalStatus",
+            "dataType": "string",
+            "sourceColumn": "MaritalStatus",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "EmailAddress",
+            "dataType": "string",
+            "sourceColumn": "EmailAddress",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "YearlyIncome",
+            "dataType": "decimal",
+            "sourceColumn": "YearlyIncome",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "TotalChildren",
+            "dataType": "int64",
+            "sourceColumn": "TotalChildren",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "NumberChildrenAtHome",
+            "dataType": "int64",
+            "sourceColumn": "NumberChildrenAtHome",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "Education",
+            "dataType": "string",
+            "sourceColumn": "Education",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "Occupation",
+            "dataType": "string",
+            "sourceColumn": "Occupation",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "HouseOwnerFlag",
+            "dataType": "string",
+            "sourceColumn": "HouseOwnerFlag",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "NumberCarsOwned",
+            "dataType": "int64",
+            "sourceColumn": "NumberCarsOwned",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "sourceColumn": "AddressLine1",
+            "displayOrdinal": 16
+          },
+          {
+            "name": "AddressLine2",
+            "dataType": "string",
+            "sourceColumn": "AddressLine2",
+            "displayOrdinal": 17
+          },
+          {
+            "name": "City",
+            "dataType": "string",
+            "sourceColumn": "City",
+            "displayOrdinal": 18
+          },
+          {
+            "name": "StateProvinceCode",
+            "dataType": "string",
+            "sourceColumn": "StateProvinceCode",
+            "displayOrdinal": 19
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "displayOrdinal": 20
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "displayOrdinal": 21
+          },
+          {
+            "name": "Salutation",
+            "dataType": "string",
+            "sourceColumn": "Salutation",
+            "displayOrdinal": 22
+          },
+          {
+            "name": "Unknown",
+            "dataType": "int64",
+            "sourceColumn": "Unknown",
+            "displayOrdinal": 23
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ProspectiveBuyer",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_ProspectiveBuyer" = Source{[Schema="dbo",Item="ProspectiveBuyer"]}[Data] ",
+                "in ",
+                "#"dbo_ProspectiveBuyer""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Sales Agg",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Sales AggPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"UnitPrice","ProductKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Agg",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "AggPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"UnitPrice","ProductKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "sales",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "salesPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"UnitPrice","ProductKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "sales test",
+        "columns": [
+          {
+            "name": "SalesAmountSum",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmountSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "SalesAmount"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "SalesAmountCount",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmountCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "SalesAmount"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "ProductCategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "sales testPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Merged DimProductSubcategory" = Table.NestedJoin(#"Expanded DimProduct", "ProductSubcategoryKey", #"dbo_DimProductSubcategory", "ProductSubcategoryKey", "DimProductSubcategory"),",
+                "#"Expanded DimProductSubcategory" = Table.ExpandTableColumn(#"Merged DimProductSubcategory", "DimProductSubcategory", {"ProductCategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProductSubcategory", {"SalesAmount","ProductCategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductCategoryKey"}, {{"SalesAmountSum", each List.Sum([SalesAmount])},{"SalesAmountCount", each List.Count([SalesAmount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "test",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "testPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "testt",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "testtPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "testtt",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "testttPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "sd",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "sdPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "czx",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "czxPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "vbb",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vbbPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "vcxv",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vcxvPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "fdf",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "fdfPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "vcxvvbnn",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vcxvvbnnPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "cvcvxcn",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "cvcvxcnPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "ccvxcvxcvzzcz",
+        "columns": [
+          {
+            "name": "TaxAmtSum",
+            "dataType": "decimal",
+            "sourceColumn": "TaxAmtSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "TaxAmt"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "ccvxcvxcvzzczPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"TaxAmt","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"TaxAmtSum", each List.Sum([TaxAmt])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "cvpo",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "cvpoPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "hhh",
+        "columns": [
+          {
+            "name": "TaxAmtSum",
+            "dataType": "decimal",
+            "sourceColumn": "TaxAmtSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "TaxAmt"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "hhhPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"TaxAmt","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"TaxAmtSum", each List.Sum([TaxAmt])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "qqq",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "qqqPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Aggr Internet Sales Customer Product",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "CustomerKey"
+              }
+            }
+          },
+          {
+            "name": "UnitPriceMin",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceMin",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "min"
+            }
+          },
+          {
+            "name": "UnitPriceCount",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "SalesAmountMax",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmountMax",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "SalesAmount"
+              },
+              "summarization": "max"
+            }
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Aggr Internet Sales Customer ProductPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"CustomerKey","UnitPrice","SalesAmount","ProductKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"CustomerKey","ProductKey"}, {{"UnitPriceMin", each List.Min([UnitPrice])},{"UnitPriceCount", each List.Count([UnitPrice])},{"SalesAmountMax", each List.Max([SalesAmount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Aggr Internet Sales Customer ProductSubCategory",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "CustomerKey"
+              }
+            }
+          },
+          {
+            "name": "UnitPriceMin",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceMin",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "min"
+            }
+          },
+          {
+            "name": "UnitPriceCount",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "SalesAmountMax",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmountMax",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "SalesAmount"
+              },
+              "summarization": "max"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Aggr Internet Sales Customer ProductSubCategoryPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"CustomerKey","UnitPrice","SalesAmount","ProductSubcategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"CustomerKey","ProductSubcategoryKey"}, {{"UnitPriceMin", each List.Min([UnitPrice])},{"UnitPriceCount", each List.Count([UnitPrice])},{"SalesAmountMax", each List.Max([SalesAmount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Aggr Internet Sales Customer ProductCategory",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "CustomerKey"
+              }
+            }
+          },
+          {
+            "name": "UnitPriceMin",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceMin",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "min"
+            }
+          },
+          {
+            "name": "UnitPriceCount",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "SalesAmountMax",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmountMax",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "SalesAmount"
+              },
+              "summarization": "max"
+            }
+          },
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "ProductCategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Aggr Internet Sales Customer ProductCategoryPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Merged DimProductSubcategory" = Table.NestedJoin(#"Expanded DimProduct", "ProductSubcategoryKey", #"dbo_DimProductSubcategory", "ProductSubcategoryKey", "DimProductSubcategory"),",
+                "#"Expanded DimProductSubcategory" = Table.ExpandTableColumn(#"Merged DimProductSubcategory", "DimProductSubcategory", {"ProductCategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProductSubcategory", {"CustomerKey","UnitPrice","SalesAmount","ProductCategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"CustomerKey","ProductCategoryKey"}, {{"UnitPriceMin", each List.Min([UnitPrice])},{"UnitPriceCount", each List.Count([UnitPrice])},{"SalesAmountMax", each List.Max([SalesAmount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "vcvcvcxvxvxcvcx",
+        "columns": [
+          {
+            "name": "TaxAmtSum",
+            "dataType": "decimal",
+            "sourceColumn": "TaxAmtSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "TaxAmt"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "ProductCategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vcvcvcxvxvxcvcxPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Merged DimProductSubcategory" = Table.NestedJoin(#"Expanded DimProduct", "ProductSubcategoryKey", #"dbo_DimProductSubcategory", "ProductSubcategoryKey", "DimProductSubcategory"),",
+                "#"Expanded DimProductSubcategory" = Table.ExpandTableColumn(#"Merged DimProductSubcategory", "DimProductSubcategory", {"ProductCategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProductSubcategory", {"TaxAmt","ProductCategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductCategoryKey"}, {{"TaxAmtSum", each List.Sum([TaxAmt])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Sales12",
+        "columns": [
+          {
+            "name": "UnitPriceSum",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceSum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Sales12Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Merged DimProductSubcategory" = Table.NestedJoin(#"Expanded DimProduct", "ProductSubcategoryKey", #"dbo_DimProductSubcategory", "ProductSubcategoryKey", "DimProductSubcategory"),",
+                "#"Expanded DimProductSubcategory" = Table.ExpandTableColumn(#"Merged DimProductSubcategory", "DimProductSubcategory", {"ProductCategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProductSubcategory", {"UnitPrice","ProductCategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductCategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "Agg test",
+        "columns": [
+          {
+            "name": "UnitPrice",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPrice",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              }
+            }
+          },
+          {
+            "name": "DiscountAmountMax",
+            "dataType": "double",
+            "sourceColumn": "DiscountAmountMax",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "DiscountAmount"
+              },
+              "summarization": "max"
+            }
+          },
+          {
+            "name": "SalesAmountCount",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmountCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "SalesAmount"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "SalesAmountMin",
+            "dataType": "decimal",
+            "sourceColumn": "SalesAmountMin",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "SalesAmount"
+              },
+              "summarization": "min"
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProduct",
+                "column": "ProductSubcategoryKey"
+              }
+            }
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "CustomerKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Agg testPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","DiscountAmount","SalesAmount","ProductSubcategoryKey","CustomerKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"UnitPrice","ProductSubcategoryKey","CustomerKey"}, {{"DiscountAmountMax", each List.Max([DiscountAmount])},{"SalesAmountCount", each List.Count([SalesAmount])},{"SalesAmountMin", each List.Min([SalesAmount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "vTargetMail",
+        "description": "All data from vTargetMail",
+        "columns": [
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CustomerKey"
+          },
+          {
+            "name": "GeographyKey",
+            "dataType": "int64",
+            "sourceColumn": "GeographyKey",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "CustomerAlternateKey",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "CustomerAlternateKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "Title",
+            "dataType": "string",
+            "sourceColumn": "Title",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "FirstName",
+            "dataType": "string",
+            "sourceColumn": "FirstName",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "MiddleName",
+            "dataType": "string",
+            "sourceColumn": "MiddleName",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "LastName",
+            "dataType": "string",
+            "sourceColumn": "LastName",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "NameStyle",
+            "dataType": "boolean",
+            "sourceColumn": "NameStyle",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "BirthDate",
+            "dataType": "dateTime",
+            "sourceColumn": "BirthDate",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "MaritalStatus",
+            "dataType": "string",
+            "sourceColumn": "MaritalStatus",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "Suffix",
+            "dataType": "string",
+            "sourceColumn": "Suffix",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "EmailAddress",
+            "dataType": "string",
+            "sourceColumn": "EmailAddress",
+            "displayOrdinal": 12
+          },
+          {
+            "name": "YearlyIncome",
+            "dataType": "decimal",
+            "sourceColumn": "YearlyIncome",
+            "displayOrdinal": 13
+          },
+          {
+            "name": "TotalChildren",
+            "dataType": "int64",
+            "sourceColumn": "TotalChildren",
+            "displayOrdinal": 14
+          },
+          {
+            "name": "NumberChildrenAtHome",
+            "dataType": "int64",
+            "sourceColumn": "NumberChildrenAtHome",
+            "displayOrdinal": 15
+          },
+          {
+            "name": "EnglishEducation",
+            "dataType": "string",
+            "sourceColumn": "EnglishEducation",
+            "displayOrdinal": 16
+          },
+          {
+            "name": "SpanishEducation",
+            "dataType": "string",
+            "sourceColumn": "SpanishEducation",
+            "displayOrdinal": 17
+          },
+          {
+            "name": "FrenchEducation",
+            "dataType": "string",
+            "sourceColumn": "FrenchEducation",
+            "displayOrdinal": 18
+          },
+          {
+            "name": "EnglishOccupation",
+            "dataType": "string",
+            "sourceColumn": "EnglishOccupation",
+            "displayOrdinal": 19
+          },
+          {
+            "name": "SpanishOccupation",
+            "dataType": "string",
+            "sourceColumn": "SpanishOccupation",
+            "displayOrdinal": 20
+          },
+          {
+            "name": "FrenchOccupation",
+            "dataType": "string",
+            "sourceColumn": "FrenchOccupation",
+            "displayOrdinal": 21
+          },
+          {
+            "name": "HouseOwnerFlag",
+            "dataType": "string",
+            "sourceColumn": "HouseOwnerFlag",
+            "displayOrdinal": 22
+          },
+          {
+            "name": "NumberCarsOwned",
+            "dataType": "int64",
+            "sourceColumn": "NumberCarsOwned",
+            "displayOrdinal": 23
+          },
+          {
+            "name": "AddressLine1",
+            "dataType": "string",
+            "sourceColumn": "AddressLine1",
+            "displayOrdinal": 24
+          },
+          {
+            "name": "AddressLine2",
+            "dataType": "string",
+            "sourceColumn": "AddressLine2",
+            "displayOrdinal": 25
+          },
+          {
+            "name": "Phone",
+            "dataType": "string",
+            "sourceColumn": "Phone",
+            "displayOrdinal": 26
+          },
+          {
+            "name": "DateFirstPurchase",
+            "dataType": "dateTime",
+            "sourceColumn": "DateFirstPurchase",
+            "displayOrdinal": 27
+          },
+          {
+            "name": "CommuteDistance",
+            "dataType": "string",
+            "sourceColumn": "CommuteDistance",
+            "displayOrdinal": 28
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region",
+            "displayOrdinal": 29
+          },
+          {
+            "name": "Age",
+            "dataType": "int64",
+            "sourceColumn": "Age",
+            "displayOrdinal": 30
+          },
+          {
+            "name": "BikeBuyer",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "BikeBuyer",
+            "displayOrdinal": 31
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vTargetMail",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_vTargetMail" = Source{[Schema="dbo",Item="vTargetMail"]}[Data] ",
+                "in ",
+                "#"dbo_vTargetMail""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "vDMPrep",
+        "description": "All data from vDMPrep",
+        "columns": [
+          {
+            "name": "EnglishProductCategoryName",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "EnglishProductCategoryName"
+          },
+          {
+            "name": "Model",
+            "dataType": "string",
+            "sourceColumn": "Model",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CustomerKey",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "Region",
+            "dataType": "string",
+            "sourceColumn": "Region",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "Age",
+            "dataType": "int64",
+            "sourceColumn": "Age",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "IncomeGroup",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "IncomeGroup",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "CalendarYear",
+            "displayOrdinal": 6
+          },
+          {
+            "name": "FiscalYear",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "FiscalYear",
+            "displayOrdinal": 7
+          },
+          {
+            "name": "Month",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "Month",
+            "displayOrdinal": 8
+          },
+          {
+            "name": "OrderNumber",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "OrderNumber",
+            "displayOrdinal": 9
+          },
+          {
+            "name": "LineNumber",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "LineNumber",
+            "displayOrdinal": 10
+          },
+          {
+            "name": "Quantity",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "Quantity",
+            "displayOrdinal": 11
+          },
+          {
+            "name": "Amount",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "Amount",
+            "displayOrdinal": 12
+          }
+        ],
+        "partitions": [
+          {
+            "name": "vDMPrep",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_vDMPrep" = Source{[Schema="dbo",Item="vDMPrep"]}[Data] ",
+                "in ",
+                "#"dbo_vDMPrep""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "SalesByRegion",
+        "description": "All data from SalesByRegion",
+        "columns": [
+          {
+            "name": "SalesAmount",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "SalesAmount"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "StateProvinceCode",
+            "dataType": "string",
+            "sourceColumn": "StateProvinceCode",
+            "displayOrdinal": 2
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SalesByRegion",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_SalesByRegion" = Source{[Schema="dbo",Item="SalesByRegion"]}[Data] ",
+                "in ",
+                "#"dbo_SalesByRegion""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "SalesByDate",
+        "description": "All data from SalesByDate",
+        "columns": [
+          {
+            "name": "SalesAmount",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "SalesAmount"
+          },
+          {
+            "name": "EnglishMonthName",
+            "dataType": "string",
+            "sourceColumn": "EnglishMonthName",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "CalendarYear",
+            "dataType": "int64",
+            "sourceColumn": "CalendarYear",
+            "displayOrdinal": 2
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SalesByDate",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_SalesByDate" = Source{[Schema="dbo",Item="SalesByDate"]}[Data] ",
+                "in ",
+                "#"dbo_SalesByDate""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "SalesByCustomer",
+        "description": "All data from SalesByCustomer",
+        "columns": [
+          {
+            "name": "SalesAmount",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "SalesAmount"
+          },
+          {
+            "name": "Gender",
+            "dataType": "string",
+            "sourceColumn": "Gender",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "NumberCarsOwned",
+            "dataType": "int64",
+            "sourceColumn": "NumberCarsOwned",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "CustomerYearlyIncome",
+            "dataType": "decimal",
+            "sourceColumn": "CustomerYearlyIncome",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "TotalChildren",
+            "dataType": "int64",
+            "sourceColumn": "TotalChildren",
+            "displayOrdinal": 4
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SalesByCustomer",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_SalesByCustomer" = Source{[Schema="dbo",Item="SalesByCustomer"]}[Data] ",
+                "in ",
+                "#"dbo_SalesByCustomer""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "SalesByCategory",
+        "description": "All data from SalesByCategory",
+        "columns": [
+          {
+            "name": "SalesAmount",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "SalesAmount"
+          },
+          {
+            "name": "ProductLine",
+            "dataType": "string",
+            "sourceColumn": "ProductLine",
+            "displayOrdinal": 1
+          }
+        ],
+        "partitions": [
+          {
+            "name": "SalesByCategory",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_SalesByCategory" = Source{[Schema="dbo",Item="SalesByCategory"]}[Data] ",
+                "in ",
+                "#"dbo_SalesByCategory""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "AggregateSales",
+        "description": "All data from AggregateSales",
+        "columns": [
+          {
+            "name": "SalesAmount",
+            "dataType": "decimal",
+            "isNullable": false,
+            "sourceColumn": "SalesAmount"
+          },
+          {
+            "name": "PostalCode",
+            "dataType": "string",
+            "sourceColumn": "PostalCode",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "CustomerIncome",
+            "dataType": "decimal",
+            "sourceColumn": "CustomerIncome",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "OrderDate",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "OrderDate",
+            "displayOrdinal": 3
+          }
+        ],
+        "partitions": [
+          {
+            "name": "AggregateSales",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
+                "#"dbo_AggregateSales" = Source{[Schema="dbo",Item="AggregateSales"]}[Data] ",
+                "in ",
+                "#"dbo_AggregateSales""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "NewAggregationHwaiting",
+        "columns": [
+          {
+            "name": "ProductSubcategoryKeySum",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKeySum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "ProductSubcategoryKey"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "ProductSubcategoryAlternateKeyCount",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryAlternateKeyCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "ProductSubcategoryAlternateKey"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "EnglishProductSubcategoryName",
+            "dataType": "string",
+            "sourceColumn": "EnglishProductSubcategoryName",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "EnglishProductSubcategoryName"
+              }
+            }
+          },
+          {
+            "name": "SpanishProductSubcategoryNameCount",
+            "dataType": "string",
+            "sourceColumn": "SpanishProductSubcategoryNameCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "SpanishProductSubcategoryName"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "FrenchProductSubcategoryNameCount",
+            "dataType": "string",
+            "sourceColumn": "FrenchProductSubcategoryNameCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "FrenchProductSubcategoryName"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "ProductCategoryKeyMax",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKeyMax",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "ProductCategoryKey"
+              },
+              "summarization": "max"
+            }
+          },
+          {
+            "name": "ProductCategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductCategoryKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "DimProductSubcategory",
+                "column": "ProductCategoryKey"
+              }
+            }
+          }
+        ],
+        "partitions": [
+          {
+            "name": "NewAggregationHwaitingPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
+                "#"Selected Columns" = Table.SelectColumns(#"dbo_DimProductSubcategory", {"ProductSubcategoryKey","ProductSubcategoryAlternateKey","EnglishProductSubcategoryName","SpanishProductSubcategoryName","FrenchProductSubcategoryName","ProductCategoryKey","ProductCategoryKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"EnglishProductSubcategoryName","ProductCategoryKey"}, {{"ProductSubcategoryKeySum", each List.Sum([ProductSubcategoryKey])},{"ProductSubcategoryAlternateKeyCount", each List.Count([ProductSubcategoryAlternateKey])},{"SpanishProductSubcategoryNameCount", each List.Count([SpanishProductSubcategoryName])},{"FrenchProductSubcategoryNameCount", each List.Count([FrenchProductSubcategoryName])},{"ProductCategoryKeyMax", each List.Max([ProductCategoryKey])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "bulat t1",
+        "columns": [
+          {
+            "name": "UnitPriceCount",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "UnitPriceMin",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceMin",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "min"
+            }
+          },
+          {
+            "name": "DiscountAmountMax",
+            "dataType": "double",
+            "sourceColumn": "DiscountAmountMax",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "DiscountAmount"
+              },
+              "summarization": "max"
+            }
+          },
+          {
+            "name": "ProductStandardCost",
+            "dataType": "decimal",
+            "sourceColumn": "ProductStandardCost",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductStandardCost"
+              }
+            }
+          },
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "bulat t1Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"UnitPrice","DiscountAmount","ProductStandardCost","ProductKey","CustomerKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductStandardCost","ProductKey","CustomerKey"}, {{"UnitPriceCount", each List.Count([UnitPrice])},{"UnitPriceMin", each List.Min([UnitPrice])},{"DiscountAmountMax", each List.Max([DiscountAmount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "bulat t2 p",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductKey"
+              }
+            }
+          },
+          {
+            "name": "UnitPriceCount",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "UnitPriceMin",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceMin",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "min"
+            }
+          },
+          {
+            "name": "DiscountAmountMax",
+            "dataType": "double",
+            "sourceColumn": "DiscountAmountMax",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "DiscountAmount"
+              },
+              "summarization": "max"
+            }
+          },
+          {
+            "name": "ProductStandardCost",
+            "dataType": "decimal",
+            "sourceColumn": "ProductStandardCost",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductStandardCost"
+              }
+            }
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "bulat t2 pPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"ProductKey","UnitPrice","DiscountAmount","ProductStandardCost","CustomerKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey","ProductStandardCost","CustomerKey"}, {{"UnitPriceCount", each List.Count([UnitPrice])},{"UnitPriceMin", each List.Min([UnitPrice])},{"DiscountAmountMax", each List.Max([DiscountAmount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "bulat t3",
+        "columns": [
+          {
+            "name": "UnitPriceCount",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "UnitPriceMin",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceMin",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "min"
+            }
+          },
+          {
+            "name": "DiscountAmountMax",
+            "dataType": "double",
+            "sourceColumn": "DiscountAmountMax",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "DiscountAmount"
+              },
+              "summarization": "max"
+            }
+          },
+          {
+            "name": "ProductStandardCost",
+            "dataType": "decimal",
+            "sourceColumn": "ProductStandardCost",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductStandardCost"
+              }
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "bulat t3Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","DiscountAmount","ProductStandardCost","ProductSubcategoryKey","CustomerKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductStandardCost","ProductSubcategoryKey","CustomerKey"}, {{"UnitPriceCount", each List.Count([UnitPrice])},{"UnitPriceMin", each List.Min([UnitPrice])},{"DiscountAmountMax", each List.Max([DiscountAmount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "bulat t4 p",
+        "columns": [
+          {
+            "name": "ProductKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductKey",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductKey"
+              }
+            }
+          },
+          {
+            "name": "UnitPriceCount",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "UnitPriceMin",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceMin",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "UnitPrice"
+              },
+              "summarization": "min"
+            }
+          },
+          {
+            "name": "DiscountAmountMax",
+            "dataType": "double",
+            "sourceColumn": "DiscountAmountMax",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "DiscountAmount"
+              },
+              "summarization": "max"
+            }
+          },
+          {
+            "name": "ProductStandardCost",
+            "dataType": "decimal",
+            "sourceColumn": "ProductStandardCost",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "FactInternetSales",
+                "column": "ProductStandardCost"
+              }
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "bulat t4 pPartition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
+                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
+                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
+                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
+                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"ProductKey","UnitPrice","DiscountAmount","ProductStandardCost","ProductSubcategoryKey","CustomerKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey","ProductStandardCost","ProductSubcategoryKey","CustomerKey"}, {{"UnitPriceCount", each List.Count([UnitPrice])},{"UnitPriceMin", each List.Min([UnitPrice])},{"DiscountAmountMax", each List.Max([DiscountAmount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "TEST43018",
+        "columns": [
+          {
+            "name": "ProductKeySum",
+            "dataType": "int64",
+            "sourceColumn": "ProductKeySum",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "bulat t4 p",
+                "column": "ProductKey"
+              },
+              "summarization": "sum"
+            }
+          },
+          {
+            "name": "UnitPriceCountCount",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceCountCount",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "bulat t4 p",
+                "column": "UnitPriceCount"
+              },
+              "summarization": "count"
+            }
+          },
+          {
+            "name": "UnitPriceMin",
+            "dataType": "decimal",
+            "sourceColumn": "UnitPriceMin",
+            "alternateOf": {
+              "baseColumn": {
+                "table": "bulat t4 p",
+                "column": "UnitPriceMin"
+              }
+            }
+          },
+          {
+            "name": "ProductSubcategoryKey",
+            "dataType": "int64",
+            "sourceColumn": "ProductSubcategoryKey"
+          },
+          {
+            "name": "CustomerKey",
+            "dataType": "int64",
+            "sourceColumn": "CustomerKey"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "TEST43018Partition",
+            "dataView": "full",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
+                "#"dbo_bulat t4 p" = Source{[Schema="dbo",Item="bulat t4 p"]}[Data],",
+                "#"Selected Columns" = Table.SelectColumns(#"dbo_bulat t4 p", {"ProductKey","UnitPriceCount","UnitPriceMin","ProductSubcategoryKey","CustomerKey"}),",
+                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"UnitPriceMin","ProductSubcategoryKey","CustomerKey"}, {{"ProductKeySum", each List.Sum([ProductKey])},{"UnitPriceCountCount", each List.Count([UnitPriceCount])}})",
+                "in ",
+                "#"Grouped Rows""
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "6c972dd7-9db6-4b33-8883-a36ef972b56c",
+        "fromTable": "FactInternetSales",
+        "fromColumn": "ProductKey",
+        "toTable": "DimProduct",
+        "toColumn": "ProductKey"
+      },
+      {
+        "name": "109649ea-3fd7-4bc3-a299-335907f4a38b",
+        "fromTable": "DimProduct",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "DimProductSubcategory",
+        "toColumn": "ProductSubcategoryKey"
+      },
+      {
+        "name": "efce2c4d-a02a-4a77-a296-d18ebbb4ccde",
+        "fromTable": "DimProductSubcategory",
+        "fromColumn": "ProductCategoryKey",
+        "toTable": "DimProductCategory",
+        "toColumn": "ProductCategoryKey"
+      },
+      {
+        "name": "d39828b1-868b-48a1-879a-b7678603554c",
+        "fromTable": "hhh",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "DimProductSubcategory",
+        "toColumn": "ProductSubcategoryKey"
+      },
+      {
+        "name": "2acbef2f-b9b5-4be2-9aab-6c7d43ad50de",
+        "fromTable": "qqq",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "DimProductSubcategory",
+        "toColumn": "ProductSubcategoryKey"
+      },
+      {
+        "name": "71e78350-7ff8-43c4-83df-d77048429eca",
+        "fromTable": "FactInternetSales",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "9a67754c-1a08-4c43-b6c9-147f4b513472",
+        "fromTable": "DimCustomer",
+        "fromColumn": "GeographyKey",
+        "toTable": "DimGeography",
+        "toColumn": "GeographyKey"
+      },
+      {
+        "name": "cd0f00b1-7f64-4739-9070-304831b8b06b",
+        "fromTable": "Aggr Internet Sales Customer Product",
+        "fromColumn": "ProductKey",
+        "toTable": "DimProduct",
+        "toColumn": "ProductKey"
+      },
+      {
+        "name": "22f657ca-6792-4ee6-ac83-a9df9b4f4ab6",
+        "fromTable": "Aggr Internet Sales Customer Product",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "f7097716-a418-4f47-89e0-6e2986872405",
+        "fromTable": "Aggr Internet Sales Customer ProductSubCategory",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "DimProductSubcategory",
+        "toColumn": "ProductSubcategoryKey"
+      },
+      {
+        "name": "557b0502-de29-4f48-9c76-84d6ce62852f",
+        "fromTable": "Aggr Internet Sales Customer ProductSubCategory",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "1ca91d78-ce13-469e-afd1-ff8eae2dca47",
+        "fromTable": "Aggr Internet Sales Customer ProductCategory",
+        "fromColumn": "ProductCategoryKey",
+        "toTable": "DimProductCategory",
+        "toColumn": "ProductCategoryKey"
+      },
+      {
+        "name": "778b5860-2b43-4028-b719-78d4c60b0dcd",
+        "fromTable": "Aggr Internet Sales Customer ProductCategory",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "73f6593f-1114-4b81-bff1-844551991b81",
+        "fromTable": "vcvcvcxvxvxcvcx",
+        "fromColumn": "ProductCategoryKey",
+        "toTable": "DimProductCategory",
+        "toColumn": "ProductCategoryKey"
+      },
+      {
+        "name": "66570ad6-a995-48f3-b7cb-535be65d20f8",
+        "fromTable": "Sales12",
+        "fromColumn": "ProductCategoryKey",
+        "toTable": "DimProductCategory",
+        "toColumn": "ProductCategoryKey"
+      },
+      {
+        "name": "5e19c892-1cde-4640-8ea3-5e8d59a33f21",
+        "fromTable": "Agg test",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "DimProductSubcategory",
+        "toColumn": "ProductSubcategoryKey"
+      },
+      {
+        "name": "ff51a1fa-9cb9-4cc2-948d-c9101c9754f6",
+        "fromTable": "Agg test",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "925a4176-0920-4844-96f5-b0ba70dd2b86",
+        "fromTable": "FactInternetSales",
+        "fromColumn": "ProductKey",
+        "toTable": "DimProduct",
+        "toColumn": "ProductAlternateKey",
+        "isActive": false
+      },
+      {
+        "name": "0123e30c-42b8-44a8-8783-02f0bdeb58c4",
+        "fromTable": "NewAggregationHwaiting",
+        "fromColumn": "ProductCategoryKey",
+        "toTable": "DimProductCategory",
+        "toColumn": "ProductCategoryKey"
+      },
+      {
+        "name": "9a89ece9-8553-4bf9-83c5-b9537dd4ec9a",
+        "fromTable": "bulat t1",
+        "fromColumn": "ProductKey",
+        "toTable": "DimProduct",
+        "toColumn": "ProductKey"
+      },
+      {
+        "name": "8bbae684-7c36-4f2a-a419-859fd6098897",
+        "fromTable": "bulat t1",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "40f0220a-dcbb-4b95-a95d-6a48bb34f6be",
+        "fromTable": "bulat t2 p",
+        "fromColumn": "ProductKey",
+        "toTable": "DimProduct",
+        "toColumn": "ProductKey"
+      },
+      {
+        "name": "8875d109-9a49-409d-93f2-b8f14fd1ee8a",
+        "fromTable": "bulat t2 p",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "82d1d6dc-8b9b-4817-9325-2a47db112018",
+        "fromTable": "bulat t3",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "DimProductSubcategory",
+        "toColumn": "ProductSubcategoryKey"
+      },
+      {
+        "name": "955c2bf7-1d53-401f-94d6-b40399606cd1",
+        "fromTable": "bulat t3",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "57075eb1-4065-48f4-9e9b-e3114c2d7bbb",
+        "fromTable": "bulat t4 p",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "DimProductSubcategory",
+        "toColumn": "ProductSubcategoryKey"
+      },
+      {
+        "name": "4ce7bf2a-a2f7-4003-b945-0bdbda9b8719",
+        "fromTable": "bulat t4 p",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      },
+      {
+        "name": "4291e042-108c-45e8-bc62-efac6eeb2aa7",
+        "fromTable": "TEST43018",
+        "fromColumn": "ProductSubcategoryKey",
+        "toTable": "DimProductSubcategory",
+        "toColumn": "ProductSubcategoryKey"
+      },
+      {
+        "name": "09615344-e15c-4cf5-be14-0c7ed8d6a64f",
+        "fromTable": "TEST43018",
+        "fromColumn": "CustomerKey",
+        "toTable": "DimCustomer",
+        "toColumn": "CustomerKey"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ASW-DEFAULT-DIAGRAM",
+        "value": "{"Version":1,"Name":"default","Tables":[{"TableName":"FactInternetSales","X":240,"Y":227,"Z":14,"Width":225,"Height":275},{"TableName":"DimProduct","X":527,"Y":224,"Z":8,"Width":225,"Height":275},{"TableName":"DimProductSubcategory","X":827,"Y":221,"Z":9,"Width":225,"Height":275},{"TableName":"DimProductCategory","X":1151,"Y":222,"Z":1,"Width":225,"Height":275},{"TableName":"DimCustomer","X":378,"Y":1009,"Z":4,"Width":225,"Height":275},{"TableName":"DimGeography","X":730,"Y":765,"Z":3,"Width":225,"Height":275},{"TableName":"Aggr Internet Sales Customer Product","X":0,"Y":495,"Z":2,"Width":225,"Height":275},{"TableName":"Aggr Internet Sales Customer ProductSubCategory","X":0,"Y":1035,"Z":5,"Width":225,"Height":275},{"TableName":"Aggr Internet Sales Customer ProductCategory","X":0,"Y":767,"Z":6,"Width":225,"Height":275},{"TableName":"Sales12","X":18,"Y":111,"Z":7,"Width":225,"Height":275},{"TableName":"Agg test","X":455,"Y":859,"Z":11,"Width":225,"Height":275},{"TableName":"NewAggregationHwaiting","X":924,"Y":783,"Z":10,"Width":225,"Height":275},{"TableName":"bulat t1","X":200,"Y":200,"Z":12,"Width":225,"Height":275},{"TableName":"bulat t2 p","X":200,"Y":200,"Z":13,"Width":225,"Height":275},{"TableName":"bulat t3","X":200,"Y":200,"Z":15,"Width":225,"Height":275},{"TableName":"bulat t4 p","X":200,"Y":200,"Z":16,"Width":225,"Height":275},{"TableName":"TEST43018","X":200,"Y":200,"Z":16,"Width":225,"Height":275}]}"
+      }
+    ]
+  }
+}
