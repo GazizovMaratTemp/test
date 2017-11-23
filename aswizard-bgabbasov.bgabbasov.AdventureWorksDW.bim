@@ -21,7 +21,7 @@
         },
         "credential": {
           "AuthenticationKind": "UsernamePassword",
-          "Username": "analytics_admin1",
+          "Username": "analytics_admin2",
           "EncryptConnection": true,
           "Password": null
         }
