@@ -62,73 +62,6 @@
         ]
       },
       {
-        "name": "DatabaseLog",
-        "description": "All data from DatabaseLog",
-        "columns": [
-          {
-            "name": "DatabaseLogID",
-            "dataType": "int64",
-            "isNullable": false,
-            "sourceColumn": "DatabaseLogID"
-          },
-          {
-            "name": "PostTime",
-            "dataType": "dateTime",
-            "isNullable": false,
-            "sourceColumn": "PostTime",
-            "displayOrdinal": 1
-          },
-          {
-            "name": "DatabaseUser",
-            "dataType": "string",
-            "isNullable": false,
-            "sourceColumn": "DatabaseUser",
-            "displayOrdinal": 2
-          },
-          {
-            "name": "Event",
-            "dataType": "string",
-            "isNullable": false,
-            "sourceColumn": "Event",
-            "displayOrdinal": 3
-          },
-          {
-            "name": "Schema",
-            "dataType": "string",
-            "sourceColumn": "Schema",
-            "displayOrdinal": 4
-          },
-          {
-            "name": "Object",
-            "dataType": "string",
-            "sourceColumn": "Object",
-            "displayOrdinal": 5
-          },
-          {
-            "name": "TSQL",
-            "dataType": "string",
-            "isNullable": false,
-            "sourceColumn": "TSQL",
-            "displayOrdinal": 6
-          }
-        ],
-        "partitions": [
-          {
-            "name": "DatabaseLog",
-            "source": {
-              "type": "m",
-              "expression": [
-                "let ",
-                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
-                "#\"dbo_DatabaseLog\" = Source{[Schema=\"dbo\",Item=\"DatabaseLog\"]}[Data] ",
-                "in ",
-                "#\"dbo_DatabaseLog\""
-              ]
-            }
-          }
-        ]
-      },
-      {
         "name": "DimAccount",
         "description": "All data from DimAccount",
         "columns": [
@@ -5013,6 +4946,73 @@
                 "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"UnitPriceMin\",\"ProductSubcategoryKey\",\"CustomerKey\"}, {{\"ProductKeySum\", each List.Sum([ProductKey])},{\"UnitPriceCountCount\", each List.Count([UnitPriceCount])}})",
                 "in ",
                 "#\"Grouped Rows\""
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "DatabaseLog",
+        "description": "All data from DatabaseLog",
+        "columns": [
+          {
+            "name": "DatabaseLogID",
+            "dataType": "int64",
+            "isNullable": false,
+            "sourceColumn": "DatabaseLogID"
+          },
+          {
+            "name": "PostTime",
+            "dataType": "dateTime",
+            "isNullable": false,
+            "sourceColumn": "PostTime",
+            "displayOrdinal": 1
+          },
+          {
+            "name": "DatabaseUser",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "DatabaseUser",
+            "displayOrdinal": 2
+          },
+          {
+            "name": "Event",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "Event",
+            "displayOrdinal": 3
+          },
+          {
+            "name": "Schema",
+            "dataType": "string",
+            "sourceColumn": "Schema",
+            "displayOrdinal": 4
+          },
+          {
+            "name": "Object",
+            "dataType": "string",
+            "sourceColumn": "Object",
+            "displayOrdinal": 5
+          },
+          {
+            "name": "TSQL",
+            "dataType": "string",
+            "isNullable": false,
+            "sourceColumn": "TSQL",
+            "displayOrdinal": 6
+          }
+        ],
+        "partitions": [
+          {
+            "name": "DatabaseLog",
+            "source": {
+              "type": "m",
+              "expression": [
+                "let ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DatabaseLog\" = Source{[Schema=\"dbo\",Item=\"DatabaseLog\"]}[Data] ",
+                "in ",
+                "#\"dbo_DatabaseLog\""
               ]
             }
           }
