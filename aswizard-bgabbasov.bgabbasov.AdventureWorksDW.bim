@@ -21,9 +21,8 @@
         },
         "credential": {
           "AuthenticationKind": "UsernamePassword",
-          "Username": "analytics_admin3",
-          "EncryptConnection": true,
-          "Password": null
+          "Username": "analytics_admin2",
+          "EncryptConnection": true
         }
       }
     ],
@@ -53,10 +52,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_AdventureWorksDWBuildVersion" = Source{[Schema="dbo",Item="AdventureWorksDWBuildVersion"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_AdventureWorksDWBuildVersion\" = Source{[Schema=\"dbo\",Item=\"AdventureWorksDWBuildVersion\"]}[Data] ",
                 "in ",
-                "#"dbo_AdventureWorksDWBuildVersion""
+                "#\"dbo_AdventureWorksDWBuildVersion\""
               ]
             }
           }
@@ -206,10 +205,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimDate" = Source{[Schema="dbo",Item="DimDate"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimDate\" = Source{[Schema=\"dbo\",Item=\"DimDate\"]}[Data] ",
                 "in ",
-                "#"dbo_DimDate""
+                "#\"dbo_DimDate\""
               ]
             }
           }
@@ -245,10 +244,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimDepartmentGroup" = Source{[Schema="dbo",Item="DimDepartmentGroup"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimDepartmentGroup\" = Source{[Schema=\"dbo\",Item=\"DimDepartmentGroup\"]}[Data] ",
                 "in ",
-                "#"dbo_DimDepartmentGroup""
+                "#\"dbo_DimDepartmentGroup\""
               ]
             }
           }
@@ -451,10 +450,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimEmployee" = Source{[Schema="dbo",Item="DimEmployee"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimEmployee\" = Source{[Schema=\"dbo\",Item=\"DimEmployee\"]}[Data] ",
                 "in ",
-                "#"dbo_DimEmployee""
+                "#\"dbo_DimEmployee\""
               ]
             }
           }
@@ -532,10 +531,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimGeography" = Source{[Schema="dbo",Item="DimGeography"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimGeography\" = Source{[Schema=\"dbo\",Item=\"DimGeography\"]}[Data] ",
                 "in ",
-                "#"dbo_DimGeography""
+                "#\"dbo_DimGeography\""
               ]
             }
           }
@@ -583,10 +582,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimOrganization" = Source{[Schema="dbo",Item="DimOrganization"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimOrganization\" = Source{[Schema=\"dbo\",Item=\"DimOrganization\"]}[Data] ",
                 "in ",
-                "#"dbo_DimOrganization""
+                "#\"dbo_DimOrganization\""
               ]
             }
           }
@@ -817,10 +816,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data] ",
                 "in ",
-                "#"dbo_DimProduct""
+                "#\"dbo_DimProduct\""
               ]
             }
           }
@@ -871,10 +870,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimProductCategory" = Source{[Schema="dbo",Item="DimProductCategory"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimProductCategory\" = Source{[Schema=\"dbo\",Item=\"DimProductCategory\"]}[Data] ",
                 "in ",
-                "#"dbo_DimProductCategory""
+                "#\"dbo_DimProductCategory\""
               ]
             }
           }
@@ -931,10 +930,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimProductSubcategory\" = Source{[Schema=\"dbo\",Item=\"DimProductSubcategory\"]}[Data] ",
                 "in ",
-                "#"dbo_DimProductSubcategory""
+                "#\"dbo_DimProductSubcategory\""
               ]
             }
           }
@@ -1049,10 +1048,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimPromotion" = Source{[Schema="dbo",Item="DimPromotion"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimPromotion\" = Source{[Schema=\"dbo\",Item=\"DimPromotion\"]}[Data] ",
                 "in ",
-                "#"dbo_DimPromotion""
+                "#\"dbo_DimPromotion\""
               ]
             }
           }
@@ -1192,10 +1191,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimReseller" = Source{[Schema="dbo",Item="DimReseller"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimReseller\" = Source{[Schema=\"dbo\",Item=\"DimReseller\"]}[Data] ",
                 "in ",
-                "#"dbo_DimReseller""
+                "#\"dbo_DimReseller\""
               ]
             }
           }
@@ -1240,10 +1239,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimSalesReason" = Source{[Schema="dbo",Item="DimSalesReason"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimSalesReason\" = Source{[Schema=\"dbo\",Item=\"DimSalesReason\"]}[Data] ",
                 "in ",
-                "#"dbo_DimSalesReason""
+                "#\"dbo_DimSalesReason\""
               ]
             }
           }
@@ -1293,10 +1292,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimSalesTerritory" = Source{[Schema="dbo",Item="DimSalesTerritory"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimSalesTerritory\" = Source{[Schema=\"dbo\",Item=\"DimSalesTerritory\"]}[Data] ",
                 "in ",
-                "#"dbo_DimSalesTerritory""
+                "#\"dbo_DimSalesTerritory\""
               ]
             }
           }
@@ -1326,10 +1325,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimScenario" = Source{[Schema="dbo",Item="DimScenario"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimScenario\" = Source{[Schema=\"dbo\",Item=\"DimScenario\"]}[Data] ",
                 "in ",
-                "#"dbo_DimScenario""
+                "#\"dbo_DimScenario\""
               ]
             }
           }
@@ -1437,10 +1436,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_FactCallCenter" = Source{[Schema="dbo",Item="FactCallCenter"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_FactCallCenter\" = Source{[Schema=\"dbo\",Item=\"FactCallCenter\"]}[Data] ",
                 "in ",
-                "#"dbo_FactCallCenter""
+                "#\"dbo_FactCallCenter\""
               ]
             }
           }
@@ -1485,10 +1484,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_FactCurrencyRate" = Source{[Schema="dbo",Item="FactCurrencyRate"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_FactCurrencyRate\" = Source{[Schema=\"dbo\",Item=\"FactCurrencyRate\"]}[Data] ",
                 "in ",
-                "#"dbo_FactCurrencyRate""
+                "#\"dbo_FactCurrencyRate\""
               ]
             }
           }
@@ -1554,10 +1553,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_FactFinance" = Source{[Schema="dbo",Item="FactFinance"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_FactFinance\" = Source{[Schema=\"dbo\",Item=\"FactFinance\"]}[Data] ",
                 "in ",
-                "#"dbo_FactFinance""
+                "#\"dbo_FactFinance\""
               ]
             }
           }
@@ -1733,10 +1732,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data] ",
                 "in ",
-                "#"dbo_FactInternetSales""
+                "#\"dbo_FactInternetSales\""
               ]
             }
           }
@@ -1774,10 +1773,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_FactInternetSalesReason" = Source{[Schema="dbo",Item="FactInternetSalesReason"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_FactInternetSalesReason\" = Source{[Schema=\"dbo\",Item=\"FactInternetSalesReason\"]}[Data] ",
                 "in ",
-                "#"dbo_FactInternetSalesReason""
+                "#\"dbo_FactInternetSalesReason\""
               ]
             }
           }
@@ -1949,10 +1948,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_FactResellerSales" = Source{[Schema="dbo",Item="FactResellerSales"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_FactResellerSales\" = Source{[Schema=\"dbo\",Item=\"FactResellerSales\"]}[Data] ",
                 "in ",
-                "#"dbo_FactResellerSales""
+                "#\"dbo_FactResellerSales\""
               ]
             }
           }
@@ -2011,10 +2010,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_FactSalesQuota" = Source{[Schema="dbo",Item="FactSalesQuota"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_FactSalesQuota\" = Source{[Schema=\"dbo\",Item=\"FactSalesQuota\"]}[Data] ",
                 "in ",
-                "#"dbo_FactSalesQuota""
+                "#\"dbo_FactSalesQuota\""
               ]
             }
           }
@@ -2080,10 +2079,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_FactSurveyResponse" = Source{[Schema="dbo",Item="FactSurveyResponse"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_FactSurveyResponse\" = Source{[Schema=\"dbo\",Item=\"FactSurveyResponse\"]}[Data] ",
                 "in ",
-                "#"dbo_FactSurveyResponse""
+                "#\"dbo_FactSurveyResponse\""
               ]
             }
           }
@@ -2245,10 +2244,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_ProspectiveBuyer" = Source{[Schema="dbo",Item="ProspectiveBuyer"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_ProspectiveBuyer\" = Source{[Schema=\"dbo\",Item=\"ProspectiveBuyer\"]}[Data] ",
                 "in ",
-                "#"dbo_ProspectiveBuyer""
+                "#\"dbo_ProspectiveBuyer\""
               ]
             }
           }
@@ -2289,12 +2288,12 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"UnitPrice","ProductKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"dbo_FactInternetSales\", {\"UnitPrice\",\"ProductKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2335,12 +2334,12 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"UnitPrice","ProductKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"dbo_FactInternetSales\", {\"UnitPrice\",\"ProductKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2381,12 +2380,12 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"UnitPrice","ProductKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"dbo_FactInternetSales\", {\"UnitPrice\",\"ProductKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2439,18 +2438,18 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Merged DimProductSubcategory" = Table.NestedJoin(#"Expanded DimProduct", "ProductSubcategoryKey", #"dbo_DimProductSubcategory", "ProductSubcategoryKey", "DimProductSubcategory"),",
-                "#"Expanded DimProductSubcategory" = Table.ExpandTableColumn(#"Merged DimProductSubcategory", "DimProductSubcategory", {"ProductCategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProductSubcategory", {"SalesAmount","ProductCategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductCategoryKey"}, {{"SalesAmountSum", each List.Sum([SalesAmount])},{"SalesAmountCount", each List.Count([SalesAmount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"dbo_DimProductSubcategory\" = Source{[Schema=\"dbo\",Item=\"DimProductSubcategory\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Merged DimProductSubcategory\" = Table.NestedJoin(#\"Expanded DimProduct\", \"ProductSubcategoryKey\", #\"dbo_DimProductSubcategory\", \"ProductSubcategoryKey\", \"DimProductSubcategory\"),",
+                "#\"Expanded DimProductSubcategory\" = Table.ExpandTableColumn(#\"Merged DimProductSubcategory\", \"DimProductSubcategory\", {\"ProductCategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProductSubcategory\", {\"SalesAmount\",\"ProductCategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductCategoryKey\"}, {{\"SalesAmountSum\", each List.Sum([SalesAmount])},{\"SalesAmountCount\", each List.Count([SalesAmount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2491,15 +2490,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2540,15 +2539,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2589,15 +2588,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2638,15 +2637,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2687,15 +2686,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2736,15 +2735,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2785,15 +2784,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2834,15 +2833,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2883,15 +2882,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2932,15 +2931,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -2981,15 +2980,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"TaxAmt","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"TaxAmtSum", each List.Sum([TaxAmt])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"TaxAmt\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"TaxAmtSum\", each List.Sum([TaxAmt])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3030,15 +3029,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3079,15 +3078,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"TaxAmt","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"TaxAmtSum", each List.Sum([TaxAmt])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"TaxAmt\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"TaxAmtSum\", each List.Sum([TaxAmt])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3128,15 +3127,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductSubcategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductSubcategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3212,12 +3211,12 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"CustomerKey","UnitPrice","SalesAmount","ProductKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"CustomerKey","ProductKey"}, {{"UnitPriceMin", each List.Min([UnitPrice])},{"UnitPriceCount", each List.Count([UnitPrice])},{"SalesAmountMax", each List.Max([SalesAmount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"dbo_FactInternetSales\", {\"CustomerKey\",\"UnitPrice\",\"SalesAmount\",\"ProductKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"CustomerKey\",\"ProductKey\"}, {{\"UnitPriceMin\", each List.Min([UnitPrice])},{\"UnitPriceCount\", each List.Count([UnitPrice])},{\"SalesAmountMax\", each List.Max([SalesAmount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3293,15 +3292,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"CustomerKey","UnitPrice","SalesAmount","ProductSubcategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"CustomerKey","ProductSubcategoryKey"}, {{"UnitPriceMin", each List.Min([UnitPrice])},{"UnitPriceCount", each List.Count([UnitPrice])},{"SalesAmountMax", each List.Max([SalesAmount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"CustomerKey\",\"UnitPrice\",\"SalesAmount\",\"ProductSubcategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"CustomerKey\",\"ProductSubcategoryKey\"}, {{\"UnitPriceMin\", each List.Min([UnitPrice])},{\"UnitPriceCount\", each List.Count([UnitPrice])},{\"SalesAmountMax\", each List.Max([SalesAmount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3377,18 +3376,18 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Merged DimProductSubcategory" = Table.NestedJoin(#"Expanded DimProduct", "ProductSubcategoryKey", #"dbo_DimProductSubcategory", "ProductSubcategoryKey", "DimProductSubcategory"),",
-                "#"Expanded DimProductSubcategory" = Table.ExpandTableColumn(#"Merged DimProductSubcategory", "DimProductSubcategory", {"ProductCategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProductSubcategory", {"CustomerKey","UnitPrice","SalesAmount","ProductCategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"CustomerKey","ProductCategoryKey"}, {{"UnitPriceMin", each List.Min([UnitPrice])},{"UnitPriceCount", each List.Count([UnitPrice])},{"SalesAmountMax", each List.Max([SalesAmount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"dbo_DimProductSubcategory\" = Source{[Schema=\"dbo\",Item=\"DimProductSubcategory\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Merged DimProductSubcategory\" = Table.NestedJoin(#\"Expanded DimProduct\", \"ProductSubcategoryKey\", #\"dbo_DimProductSubcategory\", \"ProductSubcategoryKey\", \"DimProductSubcategory\"),",
+                "#\"Expanded DimProductSubcategory\" = Table.ExpandTableColumn(#\"Merged DimProductSubcategory\", \"DimProductSubcategory\", {\"ProductCategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProductSubcategory\", {\"CustomerKey\",\"UnitPrice\",\"SalesAmount\",\"ProductCategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"CustomerKey\",\"ProductCategoryKey\"}, {{\"UnitPriceMin\", each List.Min([UnitPrice])},{\"UnitPriceCount\", each List.Count([UnitPrice])},{\"SalesAmountMax\", each List.Max([SalesAmount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3429,18 +3428,18 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Merged DimProductSubcategory" = Table.NestedJoin(#"Expanded DimProduct", "ProductSubcategoryKey", #"dbo_DimProductSubcategory", "ProductSubcategoryKey", "DimProductSubcategory"),",
-                "#"Expanded DimProductSubcategory" = Table.ExpandTableColumn(#"Merged DimProductSubcategory", "DimProductSubcategory", {"ProductCategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProductSubcategory", {"TaxAmt","ProductCategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductCategoryKey"}, {{"TaxAmtSum", each List.Sum([TaxAmt])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"dbo_DimProductSubcategory\" = Source{[Schema=\"dbo\",Item=\"DimProductSubcategory\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Merged DimProductSubcategory\" = Table.NestedJoin(#\"Expanded DimProduct\", \"ProductSubcategoryKey\", #\"dbo_DimProductSubcategory\", \"ProductSubcategoryKey\", \"DimProductSubcategory\"),",
+                "#\"Expanded DimProductSubcategory\" = Table.ExpandTableColumn(#\"Merged DimProductSubcategory\", \"DimProductSubcategory\", {\"ProductCategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProductSubcategory\", {\"TaxAmt\",\"ProductCategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductCategoryKey\"}, {{\"TaxAmtSum\", each List.Sum([TaxAmt])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3475,18 +3474,18 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Merged DimProductSubcategory" = Table.NestedJoin(#"Expanded DimProduct", "ProductSubcategoryKey", #"dbo_DimProductSubcategory", "ProductSubcategoryKey", "DimProductSubcategory"),",
-                "#"Expanded DimProductSubcategory" = Table.ExpandTableColumn(#"Merged DimProductSubcategory", "DimProductSubcategory", {"ProductCategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProductSubcategory", {"UnitPrice","ProductCategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductCategoryKey"}, {{"UnitPriceSum", each List.Sum([UnitPrice])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"dbo_DimProductSubcategory\" = Source{[Schema=\"dbo\",Item=\"DimProductSubcategory\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Merged DimProductSubcategory\" = Table.NestedJoin(#\"Expanded DimProduct\", \"ProductSubcategoryKey\", #\"dbo_DimProductSubcategory\", \"ProductSubcategoryKey\", \"DimProductSubcategory\"),",
+                "#\"Expanded DimProductSubcategory\" = Table.ExpandTableColumn(#\"Merged DimProductSubcategory\", \"DimProductSubcategory\", {\"ProductCategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProductSubcategory\", {\"UnitPrice\",\"ProductCategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductCategoryKey\"}, {{\"UnitPriceSum\", each List.Sum([UnitPrice])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3573,15 +3572,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","DiscountAmount","SalesAmount","ProductSubcategoryKey","CustomerKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"UnitPrice","ProductSubcategoryKey","CustomerKey"}, {{"DiscountAmountMax", each List.Max([DiscountAmount])},{"SalesAmountCount", each List.Count([SalesAmount])},{"SalesAmountMin", each List.Min([SalesAmount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"DiscountAmount\",\"SalesAmount\",\"ProductSubcategoryKey\",\"CustomerKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"UnitPrice\",\"ProductSubcategoryKey\",\"CustomerKey\"}, {{\"DiscountAmountMax\", each List.Max([DiscountAmount])},{\"SalesAmountCount\", each List.Count([SalesAmount])},{\"SalesAmountMin\", each List.Min([SalesAmount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -3793,10 +3792,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_vTargetMail" = Source{[Schema="dbo",Item="vTargetMail"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_vTargetMail\" = Source{[Schema=\"dbo\",Item=\"vTargetMail\"]}[Data] ",
                 "in ",
-                "#"dbo_vTargetMail""
+                "#\"dbo_vTargetMail\""
               ]
             }
           }
@@ -3901,10 +3900,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_vDMPrep" = Source{[Schema="dbo",Item="vDMPrep"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_vDMPrep\" = Source{[Schema=\"dbo\",Item=\"vDMPrep\"]}[Data] ",
                 "in ",
-                "#"dbo_vDMPrep""
+                "#\"dbo_vDMPrep\""
               ]
             }
           }
@@ -3940,10 +3939,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_SalesByRegion" = Source{[Schema="dbo",Item="SalesByRegion"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_SalesByRegion\" = Source{[Schema=\"dbo\",Item=\"SalesByRegion\"]}[Data] ",
                 "in ",
-                "#"dbo_SalesByRegion""
+                "#\"dbo_SalesByRegion\""
               ]
             }
           }
@@ -3979,10 +3978,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_SalesByDate" = Source{[Schema="dbo",Item="SalesByDate"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_SalesByDate\" = Source{[Schema=\"dbo\",Item=\"SalesByDate\"]}[Data] ",
                 "in ",
-                "#"dbo_SalesByDate""
+                "#\"dbo_SalesByDate\""
               ]
             }
           }
@@ -4030,10 +4029,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_SalesByCustomer" = Source{[Schema="dbo",Item="SalesByCustomer"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_SalesByCustomer\" = Source{[Schema=\"dbo\",Item=\"SalesByCustomer\"]}[Data] ",
                 "in ",
-                "#"dbo_SalesByCustomer""
+                "#\"dbo_SalesByCustomer\""
               ]
             }
           }
@@ -4063,10 +4062,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_SalesByCategory" = Source{[Schema="dbo",Item="SalesByCategory"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_SalesByCategory\" = Source{[Schema=\"dbo\",Item=\"SalesByCategory\"]}[Data] ",
                 "in ",
-                "#"dbo_SalesByCategory""
+                "#\"dbo_SalesByCategory\""
               ]
             }
           }
@@ -4109,10 +4108,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_AggregateSales" = Source{[Schema="dbo",Item="AggregateSales"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_AggregateSales\" = Source{[Schema=\"dbo\",Item=\"AggregateSales\"]}[Data] ",
                 "in ",
-                "#"dbo_AggregateSales""
+                "#\"dbo_AggregateSales\""
               ]
             }
           }
@@ -4212,12 +4211,12 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_DimProductSubcategory" = Source{[Schema="dbo",Item="DimProductSubcategory"]}[Data],",
-                "#"Selected Columns" = Table.SelectColumns(#"dbo_DimProductSubcategory", {"ProductSubcategoryKey","ProductSubcategoryAlternateKey","EnglishProductSubcategoryName","SpanishProductSubcategoryName","FrenchProductSubcategoryName","ProductCategoryKey","ProductCategoryKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"EnglishProductSubcategoryName","ProductCategoryKey"}, {{"ProductSubcategoryKeySum", each List.Sum([ProductSubcategoryKey])},{"ProductSubcategoryAlternateKeyCount", each List.Count([ProductSubcategoryAlternateKey])},{"SpanishProductSubcategoryNameCount", each List.Count([SpanishProductSubcategoryName])},{"FrenchProductSubcategoryNameCount", each List.Count([FrenchProductSubcategoryName])},{"ProductCategoryKeyMax", each List.Max([ProductCategoryKey])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_DimProductSubcategory\" = Source{[Schema=\"dbo\",Item=\"DimProductSubcategory\"]}[Data],",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"dbo_DimProductSubcategory\", {\"ProductSubcategoryKey\",\"ProductSubcategoryAlternateKey\",\"EnglishProductSubcategoryName\",\"SpanishProductSubcategoryName\",\"FrenchProductSubcategoryName\",\"ProductCategoryKey\",\"ProductCategoryKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"EnglishProductSubcategoryName\",\"ProductCategoryKey\"}, {{\"ProductSubcategoryKeySum\", each List.Sum([ProductSubcategoryKey])},{\"ProductSubcategoryAlternateKeyCount\", each List.Count([ProductSubcategoryAlternateKey])},{\"SpanishProductSubcategoryNameCount\", each List.Count([SpanishProductSubcategoryName])},{\"FrenchProductSubcategoryNameCount\", each List.Count([FrenchProductSubcategoryName])},{\"ProductCategoryKeyMax\", each List.Max([ProductCategoryKey])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -4292,12 +4291,12 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"UnitPrice","DiscountAmount","ProductStandardCost","ProductKey","CustomerKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductStandardCost","ProductKey","CustomerKey"}, {{"UnitPriceCount", each List.Count([UnitPrice])},{"UnitPriceMin", each List.Min([UnitPrice])},{"DiscountAmountMax", each List.Max([DiscountAmount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"dbo_FactInternetSales\", {\"UnitPrice\",\"DiscountAmount\",\"ProductStandardCost\",\"ProductKey\",\"CustomerKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductStandardCost\",\"ProductKey\",\"CustomerKey\"}, {{\"UnitPriceCount\", each List.Count([UnitPrice])},{\"UnitPriceMin\", each List.Min([UnitPrice])},{\"DiscountAmountMax\", each List.Max([DiscountAmount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -4378,12 +4377,12 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"Selected Columns" = Table.SelectColumns(#"dbo_FactInternetSales", {"ProductKey","UnitPrice","DiscountAmount","ProductStandardCost","CustomerKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey","ProductStandardCost","CustomerKey"}, {{"UnitPriceCount", each List.Count([UnitPrice])},{"UnitPriceMin", each List.Min([UnitPrice])},{"DiscountAmountMax", each List.Max([DiscountAmount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"dbo_FactInternetSales\", {\"ProductKey\",\"UnitPrice\",\"DiscountAmount\",\"ProductStandardCost\",\"CustomerKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductKey\",\"ProductStandardCost\",\"CustomerKey\"}, {{\"UnitPriceCount\", each List.Count([UnitPrice])},{\"UnitPriceMin\", each List.Min([UnitPrice])},{\"DiscountAmountMax\", each List.Max([DiscountAmount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -4458,15 +4457,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"UnitPrice","DiscountAmount","ProductStandardCost","ProductSubcategoryKey","CustomerKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductStandardCost","ProductSubcategoryKey","CustomerKey"}, {{"UnitPriceCount", each List.Count([UnitPrice])},{"UnitPriceMin", each List.Min([UnitPrice])},{"DiscountAmountMax", each List.Max([DiscountAmount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"UnitPrice\",\"DiscountAmount\",\"ProductStandardCost\",\"ProductSubcategoryKey\",\"CustomerKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductStandardCost\",\"ProductSubcategoryKey\",\"CustomerKey\"}, {{\"UnitPriceCount\", each List.Count([UnitPrice])},{\"UnitPriceMin\", each List.Min([UnitPrice])},{\"DiscountAmountMax\", each List.Max([DiscountAmount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -4552,15 +4551,15 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_FactInternetSales" = Source{[Schema="dbo",Item="FactInternetSales"]}[Data],",
-                "#"dbo_DimProduct" = Source{[Schema="dbo",Item="DimProduct"]}[Data],",
-                "#"Merged DimProduct" = Table.NestedJoin(#"dbo_FactInternetSales", "ProductKey", #"dbo_DimProduct", "ProductKey", "DimProduct"),",
-                "#"Expanded DimProduct" = Table.ExpandTableColumn(#"Merged DimProduct", "DimProduct", {"ProductSubcategoryKey"}),",
-                "#"Selected Columns" = Table.SelectColumns(#"Expanded DimProduct", {"ProductKey","UnitPrice","DiscountAmount","ProductStandardCost","ProductSubcategoryKey","CustomerKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"ProductKey","ProductStandardCost","ProductSubcategoryKey","CustomerKey"}, {{"UnitPriceCount", each List.Count([UnitPrice])},{"UnitPriceMin", each List.Min([UnitPrice])},{"DiscountAmountMax", each List.Max([DiscountAmount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_FactInternetSales\" = Source{[Schema=\"dbo\",Item=\"FactInternetSales\"]}[Data],",
+                "#\"dbo_DimProduct\" = Source{[Schema=\"dbo\",Item=\"DimProduct\"]}[Data],",
+                "#\"Merged DimProduct\" = Table.NestedJoin(#\"dbo_FactInternetSales\", \"ProductKey\", #\"dbo_DimProduct\", \"ProductKey\", \"DimProduct\"),",
+                "#\"Expanded DimProduct\" = Table.ExpandTableColumn(#\"Merged DimProduct\", \"DimProduct\", {\"ProductSubcategoryKey\"}),",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"Expanded DimProduct\", {\"ProductKey\",\"UnitPrice\",\"DiscountAmount\",\"ProductStandardCost\",\"ProductSubcategoryKey\",\"CustomerKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"ProductKey\",\"ProductStandardCost\",\"ProductSubcategoryKey\",\"CustomerKey\"}, {{\"UnitPriceCount\", each List.Count([UnitPrice])},{\"UnitPriceMin\", each List.Min([UnitPrice])},{\"DiscountAmountMax\", each List.Max([DiscountAmount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -4623,12 +4622,12 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW",",
-                "#"dbo_bulat t4 p" = Source{[Schema="dbo",Item="bulat t4 p"]}[Data],",
-                "#"Selected Columns" = Table.SelectColumns(#"dbo_bulat t4 p", {"ProductKey","UnitPriceCount","UnitPriceMin","ProductSubcategoryKey","CustomerKey"}),",
-                "#"Grouped Rows" = Table.Group(#"Selected Columns", {"UnitPriceMin","ProductSubcategoryKey","CustomerKey"}, {{"ProductKeySum", each List.Sum([ProductKey])},{"UnitPriceCountCount", each List.Count([UnitPriceCount])}})",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\",",
+                "#\"dbo_bulat t4 p\" = Source{[Schema=\"dbo\",Item=\"bulat t4 p\"]}[Data],",
+                "#\"Selected Columns\" = Table.SelectColumns(#\"dbo_bulat t4 p\", {\"ProductKey\",\"UnitPriceCount\",\"UnitPriceMin\",\"ProductSubcategoryKey\",\"CustomerKey\"}),",
+                "#\"Grouped Rows\" = Table.Group(#\"Selected Columns\", {\"UnitPriceMin\",\"ProductSubcategoryKey\",\"CustomerKey\"}, {{\"ProductKeySum\", each List.Sum([ProductKey])},{\"UnitPriceCountCount\", each List.Count([UnitPriceCount])}})",
                 "in ",
-                "#"Grouped Rows""
+                "#\"Grouped Rows\""
               ]
             }
           }
@@ -4692,10 +4691,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DatabaseLog" = Source{[Schema="dbo",Item="DatabaseLog"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DatabaseLog\" = Source{[Schema=\"dbo\",Item=\"DatabaseLog\"]}[Data] ",
                 "in ",
-                "#"dbo_DatabaseLog""
+                "#\"dbo_DatabaseLog\""
               ]
             }
           }
@@ -4773,10 +4772,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimAccount" = Source{[Schema="dbo",Item="DimAccount"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimAccount\" = Source{[Schema=\"dbo\",Item=\"DimAccount\"]}[Data] ",
                 "in ",
-                "#"dbo_DimAccount""
+                "#\"dbo_DimAccount\""
               ]
             }
           }
@@ -4814,10 +4813,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimCurrency" = Source{[Schema="dbo",Item="DimCurrency"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimCurrency\" = Source{[Schema=\"dbo\",Item=\"DimCurrency\"]}[Data] ",
                 "in ",
-                "#"dbo_DimCurrency""
+                "#\"dbo_DimCurrency\""
               ]
             }
           }
@@ -5010,10 +5009,10 @@
               "type": "m",
               "expression": [
                 "let ",
-                "Source = #"SqlServer aswizarg-server.database.windows.net AdventureWorksDW", ",
-                "#"dbo_DimCustomer" = Source{[Schema="dbo",Item="DimCustomer"]}[Data] ",
+                "Source = #\"SqlServer aswizarg-server.database.windows.net AdventureWorksDW\", ",
+                "#\"dbo_DimCustomer\" = Source{[Schema=\"dbo\",Item=\"DimCustomer\"]}[Data] ",
                 "in ",
-                "#"dbo_DimCustomer""
+                "#\"dbo_DimCustomer\""
               ]
             }
           }
@@ -5229,7 +5228,7 @@
     "annotations": [
       {
         "name": "ASW-DEFAULT-DIAGRAM",
-        "value": "{"Version":1,"Name":"default","Tables":[{"TableName":"FactInternetSales","X":240,"Y":227,"Z":13,"Width":225,"Height":275},{"TableName":"DimProductSubcategory","X":827,"Y":221,"Z":8,"Width":225,"Height":275},{"TableName":"DimProductCategory","X":1151,"Y":222,"Z":1,"Width":225,"Height":275},{"TableName":"DimCustomer","X":378,"Y":1009,"Z":4,"Width":225,"Height":275},{"TableName":"DimGeography","X":730,"Y":765,"Z":3,"Width":225,"Height":275},{"TableName":"Aggr Internet Sales Customer Product","X":0,"Y":495,"Z":2,"Width":225,"Height":275},{"TableName":"Aggr Internet Sales Customer ProductSubCategory","X":0,"Y":1035,"Z":5,"Width":225,"Height":275},{"TableName":"Aggr Internet Sales Customer ProductCategory","X":0,"Y":767,"Z":6,"Width":225,"Height":275},{"TableName":"Sales12","X":18,"Y":111,"Z":7,"Width":225,"Height":275},{"TableName":"Agg test","X":455,"Y":859,"Z":10,"Width":225,"Height":275},{"TableName":"NewAggregationHwaiting","X":924,"Y":783,"Z":9,"Width":225,"Height":275},{"TableName":"bulat t1","X":200,"Y":200,"Z":11,"Width":225,"Height":275},{"TableName":"bulat t2 p","X":200,"Y":200,"Z":12,"Width":225,"Height":275},{"TableName":"bulat t3","X":200,"Y":200,"Z":14,"Width":225,"Height":275},{"TableName":"bulat t4 p","X":200,"Y":200,"Z":15,"Width":225,"Height":275},{"TableName":"TEST43018","X":200,"Y":200,"Z":16,"Width":225,"Height":275}]}"
+        "value": "{\"Version\":1,\"Name\":\"default\",\"Tables\":[{\"TableName\":\"FactInternetSales\",\"X\":240,\"Y\":227,\"Z\":13,\"Width\":225,\"Height\":275},{\"TableName\":\"DimProductSubcategory\",\"X\":827,\"Y\":221,\"Z\":8,\"Width\":225,\"Height\":275},{\"TableName\":\"DimProductCategory\",\"X\":1151,\"Y\":222,\"Z\":1,\"Width\":225,\"Height\":275},{\"TableName\":\"DimCustomer\",\"X\":378,\"Y\":1009,\"Z\":4,\"Width\":225,\"Height\":275},{\"TableName\":\"DimGeography\",\"X\":730,\"Y\":765,\"Z\":3,\"Width\":225,\"Height\":275},{\"TableName\":\"Aggr Internet Sales Customer Product\",\"X\":0,\"Y\":495,\"Z\":2,\"Width\":225,\"Height\":275},{\"TableName\":\"Aggr Internet Sales Customer ProductSubCategory\",\"X\":0,\"Y\":1035,\"Z\":5,\"Width\":225,\"Height\":275},{\"TableName\":\"Aggr Internet Sales Customer ProductCategory\",\"X\":0,\"Y\":767,\"Z\":6,\"Width\":225,\"Height\":275},{\"TableName\":\"Sales12\",\"X\":18,\"Y\":111,\"Z\":7,\"Width\":225,\"Height\":275},{\"TableName\":\"Agg test\",\"X\":455,\"Y\":859,\"Z\":10,\"Width\":225,\"Height\":275},{\"TableName\":\"NewAggregationHwaiting\",\"X\":924,\"Y\":783,\"Z\":9,\"Width\":225,\"Height\":275},{\"TableName\":\"bulat t1\",\"X\":200,\"Y\":200,\"Z\":11,\"Width\":225,\"Height\":275},{\"TableName\":\"bulat t2 p\",\"X\":200,\"Y\":200,\"Z\":12,\"Width\":225,\"Height\":275},{\"TableName\":\"bulat t3\",\"X\":200,\"Y\":200,\"Z\":14,\"Width\":225,\"Height\":275},{\"TableName\":\"bulat t4 p\",\"X\":200,\"Y\":200,\"Z\":15,\"Width\":225,\"Height\":275},{\"TableName\":\"TEST43018\",\"X\":200,\"Y\":200,\"Z\":16,\"Width\":225,\"Height\":275}]}"
       }
     ]
   }
